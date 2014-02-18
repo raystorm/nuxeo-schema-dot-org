@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<component name="com.courseload.nuxeo.schemadotorg.ecm.types">
+  <extension target="org.nuxeo.ecm.platform.types.TypeService" point="types">
+    <type id="CreativeWork">
+      <label>Creative Work</label>
+      <description>The most generic kind of creative work, including books,
+        movies, photographs, software programs, etc.</description>
+      <icon>/icons/icon_2248_16x16x32.png</icon>
+      <bigIcon>/icons/icon_2248_96x96x32.png</bigIcon>
+      <category>SimpleDocument</category>
+      <default-view>view_documents</default-view>
+      <create-view>create_document</create-view>
+      <edit-view>edit_document</edit-view>
+      <layouts mode="any">
+        <layout>heading</layout>
+      </layouts>
+    </type>
+
+    <type id="Folder">
+      <subtypes>
+        <type>CreativeWork</type>
+      </subtypes>
+    </type>
+    <type id="Workspace">
+      <subtypes>
+        <type>CreativeWork</type>
+      </subtypes>
+    </type>
+
+  </extension>
+</component>

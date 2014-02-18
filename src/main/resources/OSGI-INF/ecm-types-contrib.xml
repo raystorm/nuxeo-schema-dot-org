@@ -4,6 +4,7 @@
     <doctype name="CreativeWork" extends="File">
       <schema name="common" />
       <schema name="dublincore"/>
+      <schema name="Thing"/>
       <schema name="CreativeWork"/>
     </doctype>
   </extension>
