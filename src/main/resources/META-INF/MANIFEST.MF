@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Courseload
+Bundle-Category: runtime
+Bundle-Localization: plugin
+Bundle-Name: ${project.name}
+Bundle-ManifestVersion: 1
+Bundle-SymbolicName: com.courseload.nuxeo.schemadotorg;singleton:=true
+Nuxeo-Component: OSGI-INF/core-types-contrib.xml,OSGI-INF/ecm-types-contrib.xml

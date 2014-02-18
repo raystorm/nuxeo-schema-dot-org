@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<component name="com.courseload.nuxeo.schemadotorg.coreTypes">
+  <extension target="org.nuxeo.ecm.core.schema.TypeService" point="schema">
+    <schema name="Thing" src="schema/Thing.xsd" prefix="thing"/>
+    <schema name="CreativeWork" src="schema/CreativeWork.xsd" prefix="creativework"/>
+  </extension>
+</component>
