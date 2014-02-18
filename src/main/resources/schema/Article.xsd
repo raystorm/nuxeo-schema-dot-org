@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Article" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="articleBody" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The actual body of the article.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="articleSection" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="wordCount" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The number of words in the text of the Article.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

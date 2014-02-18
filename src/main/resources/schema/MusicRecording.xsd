@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/MusicRecording" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="byArtist" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The artist that performed this album or recording.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="duration" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="inAlbum" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The album to which this recording belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="inPlaylist" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The playlist to which this recording belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

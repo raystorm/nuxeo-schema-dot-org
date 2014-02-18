@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/TechArticle" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:import namespace="http://schema.org/Article" schemaLocation="Article.xsd"/>
+	<xs:element name="dependencies" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Prerequisites needed to fulfill steps in article.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="proficiencyLevel" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Proficiency needed for this content; expected values: 'Beginner', 'Expert'.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

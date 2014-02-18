@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/ExercisePlan" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="activityDuration" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Length of time to engage in the activity.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="activityFrequency" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>How often one should engage in the activity.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="additionalVariable" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="exerciseType_" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="intensity" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="repetitions" type="xs:float">
+		<xs:annotation>
+			<xs:documentation>Number of times one should repeat the activity.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="restPeriods" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>How often one should break from the activity.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="workload" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

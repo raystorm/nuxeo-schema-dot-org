@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Book" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="bookEdition" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The edition of the book.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="bookFormat" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The format of the book.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="illustrator" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The illustrator of the book.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="isbn" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The ISBN of the book.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numberOfPages" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The number of pages in the book.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

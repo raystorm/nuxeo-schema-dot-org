@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Series" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="actor" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="actors" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video. (legacy spelling; see singular form, actor)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="director" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The director of the movie, tv/radio episode or series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="directors" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The director of the movie, tv/radio episode or series. (legacy spelling; see singular form, director)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="endDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The end date and time of the event or item (in ISO 8601 date format).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="episode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An episode of a TV/radio series or season</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="episodes" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An episode of a TV/radio series or season (legacy spelling; see singular form, episode)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="musicBy" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The composer of the movie or TV/radio soundtrack.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numberOfEpisodes" type="xs:float">
+		<xs:annotation>
+			<xs:documentation>The number of episodes in this season or series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numberOfSeasons" type="xs:float">
+		<xs:annotation>
+			<xs:documentation>The number of seasons in this series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="producer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The producer of the movie, tv/radio series, season, or episode, or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="productionCompany" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The production company or studio that made the movie, tv/radio series, season, or episode, or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="season" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A season in a tv/radio series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="seasons" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A season in a tv/radio series. (legacy spelling; see singular form, season)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="startDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The start date and time of the event or item (in ISO 8601 date format).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="trailer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The trailer of a movie or tv/radio series, season, or episode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

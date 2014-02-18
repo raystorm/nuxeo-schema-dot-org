@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/VideoObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:import namespace="http://schema.org/MediaObject" schemaLocation="MediaObject.xsd"/>
+	<xs:element name="caption" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The caption for this object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="thumbnail" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Thumbnail image for an image or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="transcript" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>If this MediaObject is an AudioObject or VideoObject, the transcript of that object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="videoFrameSize" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The frame size of the video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="videoQuality" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The quality of the video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Review" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="itemReviewed" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The item that is being reviewed/rated.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="reviewBody" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The actual body of the review</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="reviewRating" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The rating given in this review. Note that reviews can themselves be rated. The reviewRating applies to rating given by the review. The aggregateRating property applies to the review itself, as a creative work.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

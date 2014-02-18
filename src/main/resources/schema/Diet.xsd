@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Diet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="dietFeatures" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="endorsers" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>People or organizations that endorse the plan.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="expertConsiderations" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Medical expert advice related to the plan.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="overview" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Descriptive information establishing the overarching theory/philosophy of the plan. May include the rationale for the name, the population where the plan first came to prominence, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="physiologicalBenefits" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Specific physiologic benefits associated to the plan.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="proprietaryName" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Proprietary name given to the diet plan, typically by its originator or creator.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="risks" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Specific physiologic risks associated to the plan.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

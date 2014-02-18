@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/NewsArticle" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:import namespace="http://schema.org/Article" schemaLocation="Article.xsd"/>
+	<xs:element name="dateline" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The location where the NewsArticle was produced.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="printColumn" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The number of the column in which the NewsArticle appears in the print edition.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="printEdition" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The edition of the print product in which the NewsArticle appears.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="printPage" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="printSection" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>If this NewsArticle appears in print, this field indicates the print section in which the article appeared.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

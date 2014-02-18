@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Dataset" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="catalog" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A data catalog which contains a dataset.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="distribution" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A downloadable form of this dataset, at a specific location, in a specific format.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="spatial" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The range of spatial applicability of a dataset, e.g. for a dataset of New York weather, the state of New York.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="temporal" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

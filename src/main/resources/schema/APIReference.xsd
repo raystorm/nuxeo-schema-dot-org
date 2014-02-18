@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/APIReference" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:import namespace="http://schema.org/Article" schemaLocation="Article.xsd"/>
+	<xs:import namespace="http://schema.org/TechArticle" schemaLocation="TechArticle.xsd"/>
+	<xs:element name="assembly" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Library file name e.g., mscorlib.dll, system.web.dll</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="assemblyVersion" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Associated product/technology version. e.g., .NET Framework 4.5</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="programmingModel" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Indicates whether API is managed or unmanaged.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="targetPlatform" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Type of app development: phone, Metro style, desktop, XBox, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

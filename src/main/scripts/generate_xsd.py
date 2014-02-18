@@ -109,6 +109,5 @@ if __name__ == "__main__":
     parser = RdfsOrgParser(ALL_JSON_URL)
     for datatype in parser.parse_types():
         is_creative_work = 'CreativeWork' in [x[0] for x in datatype.ancestors]
-        if datatype.specific_properties and (
-                is_creative_work or datatype.name in ('CreativeWork', 'Thing')):
+        if is_creative_work or datatype.name in ('CreativeWork', 'Thing'):
             emit_xsd(datatype)

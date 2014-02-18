@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Clip" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="clipNumber" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Position of the clip within an ordered group of clips.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="partOfEpisode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The episode to which this clip belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="partOfSeason" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The season to which this episode belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="partOfSeries" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The series to which this episode or season belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="position" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Free text to define other than pure numerical ranking of an episode or a season in an ordered list of items (further formatting restrictions may apply within particular user groups).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="publication" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A publication event associated with the episode, clip or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

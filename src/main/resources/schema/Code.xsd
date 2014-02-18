@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Code" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="codeRepository" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="programmingLanguage" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The computer programming language.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="runtime" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="sampleType_" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Full (compile ready) solution, code snippet, inline code, scripts, template.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="targetProduct" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

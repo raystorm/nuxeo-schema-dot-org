@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/TVEpisode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:import namespace="http://schema.org/Episode" schemaLocation="Episode.xsd"/>
+	<xs:element name="partOfTVSeries" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The TV series to which this episode or season belongs. (legacy form; partOfSeries is preferred)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

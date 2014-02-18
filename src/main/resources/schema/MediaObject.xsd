@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/MediaObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="associatedArticle" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A NewsArticle associated with the Media Object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="bitrate" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The bitrate of the media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="contentSize" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>File size in (mega/kilo) bytes.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="contentUrl" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>Actual bytes of the media object, for example the image file or video file. (previous spelling: contentURL)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="duration" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="embedUrl" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag. (previous spelling: embedURL)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="encodesCreativeWork" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The creative work encoded by this media object</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="encodingFormat" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>mp3, mpeg4, etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="expires" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Date the content expires and is no longer useful or available. Useful for videos.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="height" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The height of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="playerType_" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Player type required—for example, Flash or Silverlight.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="productionCompany" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The production company or studio that made the movie, tv/radio series, season, or episode, or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="publication" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A publication event associated with the episode, clip or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="regionsAllowed" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in ISO 3166 format.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="requiresSubscription" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="uploadDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Date when this media object was uploaded to this site.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="width" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The width of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

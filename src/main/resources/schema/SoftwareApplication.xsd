@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/SoftwareApplication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="applicationCategory" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Type of software application, e.g. &quot;Game, Multimedia&quot;.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="applicationSubCategory" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Subcategory of the application, e.g. &quot;Arcade Game&quot;.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="applicationSuite" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The name of the application suite to which the application belongs (e.g. Excel belongs to Office)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="countriesNotSupported" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="countriesSupported" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="device" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Device required to run the application. Used in cases where a specific make/model is required to run the application.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="downloadUrl" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>If the file can be downloaded, URL to download the binary.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="featureList" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Features or modules provided by this application (and possibly required by other applications).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="fileFormat" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>MIME format of the binary (e.g. application/zip).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="fileSize" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="installUrl" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>URL at which the app may be installed, if different from the URL of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="memoryRequirements" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Minimum memory requirements.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="operatingSystem" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Operating systems supported (Windows 7, OSX 10.6, Android 1.6).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="permissions" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="processorRequirements" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Processor architecture required to run the application (e.g. IA64).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="releaseNotes" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Description of what changed in this version.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="requirements" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="screenshot" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A link to a screenshot image of the app.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="softwareVersion" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Version of the software instance.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="storageRequirements" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Storage requirements (free space required).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

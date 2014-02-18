@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Movie" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="actor" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="actors" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video. (legacy spelling; see singular form, actor)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="director" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The director of the movie, tv/radio episode or series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="directors" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The director of the movie, tv/radio episode or series. (legacy spelling; see singular form, director)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="duration" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="musicBy" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The composer of the movie or TV/radio soundtrack.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="producer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The producer of the movie, tv/radio series, season, or episode, or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="productionCompany" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The production company or studio that made the movie, tv/radio series, season, or episode, or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="trailer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The trailer of a movie or tv/radio series, season, or episode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

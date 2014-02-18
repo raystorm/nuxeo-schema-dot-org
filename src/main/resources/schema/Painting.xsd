@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Painting" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+</xs:schema>

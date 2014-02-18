@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Thing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="additionalType_" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="alternateName" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An alias for the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="description" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A short description of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="image" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>URL of an image of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="name" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The name of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="sameAs" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="url" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>URL of the item.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

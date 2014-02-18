@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Season" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="endDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The end date and time of the event or item (in ISO 8601 date format).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="episode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An episode of a TV/radio series or season</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="episodes" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An episode of a TV/radio series or season (legacy spelling; see singular form, episode)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numberOfEpisodes" type="xs:float">
+		<xs:annotation>
+			<xs:documentation>The number of episodes in this season or series.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="partOfSeries" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The series to which this episode or season belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="position" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Free text to define other than pure numerical ranking of an episode or a season in an ordered list of items (further formatting restrictions may apply within particular user groups).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="producer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The producer of the movie, tv/radio series, season, or episode, or video.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="productionCompany" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The production company or studio that made the movie, tv/radio series, season, or episode, or media object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="seasonNumber" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Position of the season within an ordered group of seasons.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="startDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The start date and time of the event or item (in ISO 8601 date format).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="trailer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The trailer of a movie or tv/radio series, season, or episode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

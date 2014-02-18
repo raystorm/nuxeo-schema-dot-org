@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/WebPage" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
+	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
+	<xs:element name="breadcrumb" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A set of links that can help a user understand and navigate a website hierarchy.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="isPartOf" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Indicates the collection or gallery to which the item belongs.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="lastReviewed" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Date on which the content on this web page was last reviewed for accuracy and/or completeness.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="mainContentOfPage" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Indicates if this web page element is the main subject of the page.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="primaryImageOfPage" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Indicates the main image on the page</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="relatedLink" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>A link related to this web page, for example to other related web pages.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="reviewedBy" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>People or organizations that have reviewed the content on this web page for accuracy and/or completeness.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="significantLink" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="significantLinks" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most (legacy spelling; see singular form, significantLink).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="specialty" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>One of the domain specialities to which this web page's content applies.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>
