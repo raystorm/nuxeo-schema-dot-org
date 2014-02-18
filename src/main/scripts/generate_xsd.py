@@ -68,6 +68,14 @@ class RdfsOrgParser(object):
                              ancestors=types)
 
 
+def munge_element_name(prop_name):
+    """
+    Nuxeo and Nuxeo Studio use prefixes and suffixes internally.  This
+    function prepends or appends characters to avoid collisions.
+    """
+    return prop_name + "_" if prop_name.endswith("Type") else prop_name
+
+
 def write_tree(item_type, output_file):
     schema = ET.Element(_xs("schema"),
                         attrib={"targetNamespace": item_type.url})
@@ -79,7 +87,7 @@ def write_tree(item_type, output_file):
 
     for prop_name, prop_type, prop_doc in item_type.specific_properties:
         el = ET.SubElement(schema, _xs("element"),
-                           attrib={"name": prop_name,
+                           attrib={"name": munge_element_name(prop_name),
                                    "type": prop_type})
         ann = ET.SubElement(el, _xs("annotation"))
         doc = ET.SubElement(ann, _xs("documentation"))
