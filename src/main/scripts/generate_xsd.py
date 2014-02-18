@@ -68,36 +68,31 @@ class RdfsOrgParser(object):
                              ancestors=types)
 
 
-class XmlSchemaEmitter(object):
-    def __init__(self, item_type):
-        self.item_type = item_type
+def write_tree(item_type, output_file):
+    schema = ET.Element(_xs("schema"),
+                        attrib={"targetNamespace": item_type.url})
 
-    def write_tree(self, output_file):
-        schema = ET.Element(_xs("schema"),
-                            attrib={"targetNamespace": self.item_type.url})
+    for type_name, type_url in item_type.ancestors:
+        ET.SubElement(schema, _xs("import"),
+                      attrib={"namespace": type_url,
+                              "schemaLocation": type_name + ".xsd"})
 
-        for type_name, type_url in self.item_type.ancestors:
-            ET.SubElement(schema, _xs("import"),
-                          attrib={"namespace": type_url,
-                                  "schemaLocation": type_name + ".xsd"})
+    for prop_name, prop_type, prop_doc in item_type.specific_properties:
+        el = ET.SubElement(schema, _xs("element"),
+                           attrib={"name": prop_name,
+                                   "type": prop_type})
+        ann = ET.SubElement(el, _xs("annotation"))
+        doc = ET.SubElement(ann, _xs("documentation"))
+        doc.text = prop_doc
 
-        for prop_name, prop_type, prop_doc in self.item_type.specific_properties:
-            el = ET.SubElement(schema, _xs("element"),
-                               attrib={"name": prop_name,
-                                       "type": prop_type})
-            ann = ET.SubElement(el, _xs("annotation"))
-            doc = ET.SubElement(ann, _xs("documentation"))
-            doc.text = prop_doc
-
-        ET.ElementTree(schema).write(output_file, xml_declaration=True,
+    ET.ElementTree(schema).write(output_file, xml_declaration=True,
                                      encoding="utf-8")
 
 
 def emit_xsd(item_type):
-    emitter = XmlSchemaEmitter(item_type)
     path = os.path.join(TARGET_DIR, "%s.xsd" % item_type.name)
     with open(path, "w") as output:
-        emitter.write_tree(output)
+        write_tree(item_type, output)
 
 
 if __name__ == "__main__":
