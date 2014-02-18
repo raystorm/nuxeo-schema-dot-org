@@ -25,6 +25,7 @@ class RdfsOrgParser(object):
     def __init__(self, url):
         self.url = url
         self.property_types = {}
+        self.property_docs = {}
         self.type_urls = {}
         self.data = None
 
@@ -33,6 +34,9 @@ class RdfsOrgParser(object):
 
         for prop in self.data["properties"].values():
             key = prop["id"]
+            doc = prop["comment_plain"]
+            self.property_docs[key] = doc
+
             ranges = set(prop["ranges"])
             if set(["Number"]) == ranges:
                 self.property_types[key] = "xs:float"
@@ -55,7 +59,7 @@ class RdfsOrgParser(object):
     def parse_types(self):
         self.setup()
         for type_data in self.data['types'].values():
-            props = [(prop, self.property_types[prop])
+            props = [(prop, self.property_types[prop], self.property_docs[prop])
                      for prop in type_data['specific_properties']]
             types = [(t, self.type_urls[t]) for t in type_data['ancestors']]
             yield ParsedType(url=type_data['url'],
@@ -68,7 +72,7 @@ class XmlSchemaEmitter(object):
     def __init__(self, item_type):
         self.item_type = item_type
 
-    def create_tree(self):
+    def write_tree(self, output_file):
         schema = ET.Element(_xs("schema"),
                             attrib={"targetNamespace": self.item_type.url})
 
@@ -77,19 +81,23 @@ class XmlSchemaEmitter(object):
                           attrib={"namespace": type_url,
                                   "schemaLocation": type_name + ".xsd"})
 
-        for prop_name, prop_type in self.item_type.specific_properties:
-            ET.SubElement(schema, _xs("element"),
-                          attrib={"name": prop_name,
-                                  "type": prop_type})
-        return ET.ElementTree(schema)
+        for prop_name, prop_type, prop_doc in self.item_type.specific_properties:
+            el = ET.SubElement(schema, _xs("element"),
+                               attrib={"name": prop_name,
+                                       "type": prop_type})
+            ann = ET.SubElement(el, _xs("annotation"))
+            doc = ET.SubElement(ann, _xs("documentation"))
+            doc.text = prop_doc
+
+        ET.ElementTree(schema).write(output_file, xml_declaration=True,
+                                     encoding="utf-8")
 
 
 def emit_xsd(item_type):
     emitter = XmlSchemaEmitter(item_type)
-    tree = emitter.create_tree()
     path = os.path.join(TARGET_DIR, "%s.xsd" % item_type.name)
     with open(path, "w") as output:
-        tree.write(output, xml_declaration=True, encoding="utf-8")
+        emitter.write_tree(output)
 
 
 if __name__ == "__main__":
