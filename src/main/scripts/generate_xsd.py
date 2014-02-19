@@ -73,22 +73,20 @@ def munge_element_name(prop_name):
     return prop_name + "_" if prop_name.endswith("Type") else prop_name
 
 
-class NuxeoTypeTree(object):
-    def __init__(self, terms, parent_type_name, target_dir):
-        self.terms = terms
-        self.parent_type_name = parent_type_name
-        self.target_dir = target_dir
+class NuxeoType(object):
+    def __init__(self, type_data):
+        self.type_data = type_data
 
-    def write_xsd(self, item_type):
+    def write_xsd(self, output_file_name):
         schema = ET.Element(_xs("schema"),
-                            attrib={"targetNamespace": item_type.url})
+                            attrib={"targetNamespace": self.type_data.url})
 
-        for type_name, type_url in item_type.ancestors:
+        for type_name, type_url in self.type_data.ancestors:
             ET.SubElement(schema, _xs("import"),
                           attrib={"namespace": type_url,
                                   "schemaLocation": type_name + ".xsd"})
 
-        for prop_name, prop_type, prop_doc in item_type.specific_properties:
+        for prop_name, prop_type, prop_doc in self.type_data.specific_properties:
             el = ET.SubElement(schema, _xs("element"),
                                attrib={"name": munge_element_name(prop_name),
                                        "type": prop_type})
@@ -96,24 +94,37 @@ class NuxeoTypeTree(object):
             doc = ET.SubElement(ann, _xs("documentation"))
             doc.text = prop_doc
 
-        path = os.path.join(self.target_dir, "%s.xsd" % item_type.name)
-        ET.ElementTree(schema).write(path, xml_declaration=True,
+        ET.ElementTree(schema).write(output_file_name, xml_declaration=True,
                                      encoding="utf-8")
 
-    def is_descendant(self, item_type):
-        result = self.parent_type_name in [x[0] for x in item_type.ancestors]
-        return result or item_type.name in (self.parent_type_name, 'Thing')
+    def is_descendant(self, type_name):
+        result = type_name in [x[0] for x in self.type_data.ancestors]
+        return result or self.type_data.name in (type_name, 'Thing')
+
+
+class NuxeoTypeTree(object):
+    def __init__(self, terms, parent_type_name, target_dir):
+        self.nuxeo_types = (NuxeoType(term) for term in terms)
+        self.parent_type_name = parent_type_name
+        self.target_dir = target_dir
 
     def generate(self):
-        for item_type in self.terms:
-            if self.is_descendant(item_type):
-                self.write_xsd(item_type)
+        for nuxeo_type in self.nuxeo_types:
+            if nuxeo_type.is_descendant(self.parent_type_name):
+                xsd_path = os.path.join(self.target_dir, '%s.xsd' %
+                                        nuxeo_type.type_data.name)
+                nuxeo_type.write_xsd(xsd_path)
 
 
-if __name__ == "__main__":
+def main():
     shutil.rmtree(TARGET_DIR, ignore_errors=True)
     os.makedirs(TARGET_DIR)
     data = json.load(urllib2.urlopen(ALL_JSON_URL))
     schema_terms = SchemaTerms(data)
     nuxeo_types = NuxeoTypeTree(schema_terms, 'CreativeWork', TARGET_DIR)
     nuxeo_types.generate()
+
+if __name__ == "__main__":
+    main()
+
+
