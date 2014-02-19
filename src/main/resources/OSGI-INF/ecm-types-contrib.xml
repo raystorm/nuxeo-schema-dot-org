@@ -5,185 +5,216 @@
 		<doctype extends="File" name="Thing">
 			<schema name="common"/>
 			<schema name="dublincore"/>
+			<schema name="Thing"/>
 		</doctype>
 		<doctype extends="File" name="CreativeWork">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
+			<schema name="CreativeWork"/>
 		</doctype>
 		<doctype extends="File" name="Movie">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Movie"/>
 		</doctype>
 		<doctype extends="File" name="MediaObject">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="MediaObject"/>
 		</doctype>
 		<doctype extends="File" name="Blog">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Blog"/>
 		</doctype>
 		<doctype extends="File" name="Book">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Book"/>
 		</doctype>
 		<doctype extends="File" name="MusicRecording">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="MusicRecording"/>
 		</doctype>
 		<doctype extends="File" name="ExercisePlan">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="ExercisePlan"/>
 		</doctype>
 		<doctype extends="File" name="Map">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Map"/>
 		</doctype>
 		<doctype extends="File" name="Season">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Season"/>
 		</doctype>
 		<doctype extends="File" name="Diet">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Diet"/>
 		</doctype>
 		<doctype extends="File" name="SoftwareApplication">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="SoftwareApplication"/>
 		</doctype>
 		<doctype extends="File" name="Article">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Article"/>
 		</doctype>
 		<doctype extends="File" name="WebPageElement">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="WebPageElement"/>
 		</doctype>
 		<doctype extends="File" name="Review">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Review"/>
 		</doctype>
 		<doctype extends="File" name="Photograph">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Photograph"/>
 		</doctype>
 		<doctype extends="File" name="Episode">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Episode"/>
 		</doctype>
 		<doctype extends="File" name="WebPage">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="WebPage"/>
 		</doctype>
 		<doctype extends="File" name="MusicPlaylist">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="MusicPlaylist"/>
 		</doctype>
 		<doctype extends="File" name="ItemList">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="ItemList"/>
 		</doctype>
 		<doctype extends="File" name="Painting">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Painting"/>
 		</doctype>
 		<doctype extends="File" name="Comment">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Comment"/>
 		</doctype>
 		<doctype extends="File" name="Code">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Code"/>
 		</doctype>
 		<doctype extends="File" name="Clip">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Clip"/>
 		</doctype>
 		<doctype extends="File" name="Series">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Series"/>
 		</doctype>
 		<doctype extends="File" name="Recipe">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Recipe"/>
 		</doctype>
 		<doctype extends="File" name="Dataset">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Dataset"/>
 		</doctype>
 		<doctype extends="File" name="TVSeason">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="TVSeason"/>
 		</doctype>
 		<doctype extends="File" name="TVSeries">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="TVSeries"/>
 		</doctype>
 		<doctype extends="File" name="DataCatalog">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="DataCatalog"/>
 		</doctype>
 		<doctype extends="File" name="Sculpture">
 			<schema name="common"/>
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
+			<schema name="Sculpture"/>
 		</doctype>
 		<doctype extends="File" name="AudioObject">
 			<schema name="common"/>
@@ -191,6 +222,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
+			<schema name="AudioObject"/>
 		</doctype>
 		<doctype extends="File" name="VideoObject">
 			<schema name="common"/>
@@ -198,6 +230,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
+			<schema name="VideoObject"/>
 		</doctype>
 		<doctype extends="File" name="SearchResultsPage">
 			<schema name="common"/>
@@ -205,6 +238,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="SearchResultsPage"/>
 		</doctype>
 		<doctype extends="File" name="RadioClip">
 			<schema name="common"/>
@@ -212,6 +246,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Clip"/>
+			<schema name="RadioClip"/>
 		</doctype>
 		<doctype extends="File" name="MusicVideoObject">
 			<schema name="common"/>
@@ -219,6 +254,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
+			<schema name="MusicVideoObject"/>
 		</doctype>
 		<doctype extends="File" name="TVEpisode">
 			<schema name="common"/>
@@ -226,6 +262,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Episode"/>
+			<schema name="TVEpisode"/>
 		</doctype>
 		<doctype extends="File" name="TVClip">
 			<schema name="common"/>
@@ -233,6 +270,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Clip"/>
+			<schema name="TVClip"/>
 		</doctype>
 		<doctype extends="File" name="DataDownload">
 			<schema name="common"/>
@@ -240,6 +278,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
+			<schema name="DataDownload"/>
 		</doctype>
 		<doctype extends="File" name="RadioSeries">
 			<schema name="common"/>
@@ -247,6 +286,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Series"/>
+			<schema name="RadioSeries"/>
 		</doctype>
 		<doctype extends="File" name="AboutPage">
 			<schema name="common"/>
@@ -254,6 +294,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="AboutPage"/>
 		</doctype>
 		<doctype extends="File" name="WPFooter">
 			<schema name="common"/>
@@ -261,6 +302,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="WPFooter"/>
 		</doctype>
 		<doctype extends="File" name="ImageObject">
 			<schema name="common"/>
@@ -268,6 +310,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
+			<schema name="ImageObject"/>
 		</doctype>
 		<doctype extends="File" name="CheckoutPage">
 			<schema name="common"/>
@@ -275,6 +318,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="CheckoutPage"/>
 		</doctype>
 		<doctype extends="File" name="ScholarlyArticle">
 			<schema name="common"/>
@@ -282,6 +326,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
+			<schema name="ScholarlyArticle"/>
 		</doctype>
 		<doctype extends="File" name="NewsArticle">
 			<schema name="common"/>
@@ -289,6 +334,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
+			<schema name="NewsArticle"/>
 		</doctype>
 		<doctype extends="File" name="ProfilePage">
 			<schema name="common"/>
@@ -296,6 +342,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="ProfilePage"/>
 		</doctype>
 		<doctype extends="File" name="SiteNavigationElement">
 			<schema name="common"/>
@@ -303,6 +350,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="SiteNavigationElement"/>
 		</doctype>
 		<doctype extends="File" name="WPSideBar">
 			<schema name="common"/>
@@ -310,6 +358,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="WPSideBar"/>
 		</doctype>
 		<doctype extends="File" name="ItemPage">
 			<schema name="common"/>
@@ -317,6 +366,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="ItemPage"/>
 		</doctype>
 		<doctype extends="File" name="RadioSeason">
 			<schema name="common"/>
@@ -324,6 +374,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Season"/>
+			<schema name="RadioSeason"/>
 		</doctype>
 		<doctype extends="File" name="MusicAlbum">
 			<schema name="common"/>
@@ -331,6 +382,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="MusicPlaylist"/>
+			<schema name="MusicAlbum"/>
 		</doctype>
 		<doctype extends="File" name="MobileApplication">
 			<schema name="common"/>
@@ -338,6 +390,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="SoftwareApplication"/>
+			<schema name="MobileApplication"/>
 		</doctype>
 		<doctype extends="File" name="WebApplication">
 			<schema name="common"/>
@@ -345,6 +398,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="SoftwareApplication"/>
+			<schema name="WebApplication"/>
 		</doctype>
 		<doctype extends="File" name="WPAdBlock">
 			<schema name="common"/>
@@ -352,6 +406,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="WPAdBlock"/>
 		</doctype>
 		<doctype extends="File" name="BlogPosting">
 			<schema name="common"/>
@@ -359,6 +414,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
+			<schema name="BlogPosting"/>
 		</doctype>
 		<doctype extends="File" name="CollectionPage">
 			<schema name="common"/>
@@ -366,6 +422,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="CollectionPage"/>
 		</doctype>
 		<doctype extends="File" name="TechArticle">
 			<schema name="common"/>
@@ -373,6 +430,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
+			<schema name="TechArticle"/>
 		</doctype>
 		<doctype extends="File" name="RadioEpisode">
 			<schema name="common"/>
@@ -380,6 +438,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="Episode"/>
+			<schema name="RadioEpisode"/>
 		</doctype>
 		<doctype extends="File" name="WPHeader">
 			<schema name="common"/>
@@ -387,6 +446,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="WPHeader"/>
 		</doctype>
 		<doctype extends="File" name="ContactPage">
 			<schema name="common"/>
@@ -394,6 +454,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="ContactPage"/>
 		</doctype>
 		<doctype extends="File" name="Table">
 			<schema name="common"/>
@@ -401,6 +462,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPageElement"/>
+			<schema name="Table"/>
 		</doctype>
 		<doctype extends="File" name="MedicalWebPage">
 			<schema name="common"/>
@@ -408,6 +470,7 @@
 			<schema name="Thing"/>
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
+			<schema name="MedicalWebPage"/>
 		</doctype>
 		<doctype extends="File" name="APIReference">
 			<schema name="common"/>
@@ -416,6 +479,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
 			<schema name="TechArticle"/>
+			<schema name="APIReference"/>
 		</doctype>
 		<doctype extends="File" name="VideoGallery">
 			<schema name="common"/>
@@ -424,6 +488,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
 			<schema name="CollectionPage"/>
+			<schema name="VideoGallery"/>
 		</doctype>
 		<doctype extends="File" name="ImageGallery">
 			<schema name="common"/>
@@ -432,6 +497,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="WebPage"/>
 			<schema name="CollectionPage"/>
+			<schema name="ImageGallery"/>
 		</doctype>
 		<doctype extends="File" name="MedicalScholarlyArticle">
 			<schema name="common"/>
@@ -440,6 +506,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Article"/>
 			<schema name="ScholarlyArticle"/>
+			<schema name="MedicalScholarlyArticle"/>
 		</doctype>
 	</extension>
 </component>

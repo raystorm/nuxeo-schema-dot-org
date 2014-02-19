@@ -282,6 +282,10 @@ class NuxeoTypeTree(object):
                     doctype,
                     "schema",
                     attrib={"name": schema})
+            ET.SubElement(
+                doctype,
+                "schema",
+                attrib={"name": generated_type.type_data.name})
 
         self.write_xml(
             os.path.join(self.types_dir, NuxeoTypeTree.DOC_TYPES_FILE),
