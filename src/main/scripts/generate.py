@@ -16,7 +16,7 @@ ET.register_namespace("xs", XS_URL)
 
 ParsedType = collections.namedtuple(
     'ParsedType',
-    ['name', 'url', 'specific_properties', 'ancestors'])
+    ['name', 'url', 'specific_properties', 'ancestors', 'comment_plain'])
 
 
 def _xs(element_name):
@@ -127,7 +127,8 @@ class SchemaTerms(object):
             yield ParsedType(url=type_data['url'],
                              name=type_data['id'],
                              specific_properties=props,
-                             ancestors=types)
+                             ancestors=types,
+                             comment_plain=type_data['comment_plain'])
 
 
 def munge_element_name(prop_name):
@@ -175,17 +176,39 @@ class NuxeoTypeTree(object):
     CORE_TYPES_FILE = "core-types-contrib.xml"
     DOC_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.types"
     DOC_TYPES_FILE = "ecm-types-contrib.xml"
+    UI_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.ecm.types"
+    UI_TYPES_FILE = "ui-types-contrib.xml"
     TYPES_DIR = "osgi"
     SCHEMA_DIR = "schema"
+    ICON_FILE = "icon_mappings.txt"
 
     def __init__(self, terms, parent_type_name, target_dir):
-        self.nuxeo_types = (NuxeoType(term) for term in terms)
+        self.nuxeo_types = [NuxeoType(term) for term in terms]
+        self.icons = self.load_icons()
         self.parent_type_name = parent_type_name
         self.target_dir = target_dir
         self.schema_dir = os.path.join(target_dir, NuxeoTypeTree.SCHEMA_DIR)
         self.types_dir = os.path.join(target_dir, NuxeoTypeTree.TYPES_DIR)
         os.makedirs(self.schema_dir)
         os.makedirs(self.types_dir)
+
+    def load_icons(self):
+        result = {}
+        with open(NuxeoTypeTree.ICON_FILE) as input_file:
+            for line in input_file:
+                name, small_icon, large_icon = line.split()
+                result[name] = (name, small_icon, large_icon)
+        return result
+
+    def get_icons(self, type_data):
+        if type_data.name in self.icons:
+            return self.icons[type_data.name]
+        else:
+            for ancestor_name in reversed([ancestor[0]
+                                           for ancestor in type_data.ancestors]):
+                if ancestor_name in self.icons:
+                    return self.icons[ancestor_name]
+        return (type_data.name, '', '')
 
     def generate(self):
         generated_types = {}
@@ -202,6 +225,10 @@ class NuxeoTypeTree(object):
         ordered_types = [generated_types[x] for x in order]
         self.generate_schema_contrib(ordered_types)
         self.generate_doctype_contrib(ordered_types)
+        self.generate_ui_contrib(ordered_types)
+
+    def write_xml(self, path, node):
+        ET.ElementTree(node).write(path, xml_declaration=True, encoding="utf-8")
 
     def generate_schema_contrib(self, generated_types):
         component = ET.Element(
@@ -222,10 +249,9 @@ class NuxeoTypeTree(object):
                         "src": "schema/%s.xsd" % name,
                         "prefix": name.lower()})
 
-        ET.ElementTree(component).write(
+        self.write_xml(
             os.path.join(self.types_dir, NuxeoTypeTree.CORE_TYPES_FILE),
-            xml_declaration=True,
-            encoding="utf-8")
+            component)
 
     def generate_doctype_contrib(self, generated_types):
         component = ET.Element(
@@ -257,10 +283,53 @@ class NuxeoTypeTree(object):
                     "schema",
                     attrib={"name": schema})
 
-        ET.ElementTree(component).write(
+        self.write_xml(
             os.path.join(self.types_dir, NuxeoTypeTree.DOC_TYPES_FILE),
-            xml_declaration=True,
-            encoding="utf-8")
+            component)
+
+    def generate_ui_contrib(self, generated_types):
+        component = ET.Element(
+            "component",
+            attrib={"name": NuxeoTypeTree.UI_TYPES_NAME})
+        require = ET.SubElement(
+            component,
+            "require")
+        require.text = "org.nuxeo.ecm.platform.types"
+
+        extension = ET.SubElement(
+            component,
+            "extension",
+            attrib={"target": "org.nuxeo.ecm.platform.types.TypeService",
+                    "point": "types"})
+
+        for generated_type in generated_types:
+            type_data = generated_type.type_data
+            _, small_icon, large_icon = self.get_icons(type_data)
+            type_el = ET.SubElement(
+                extension,
+                "type",
+                attrib={"id": type_data.name})
+            ET.SubElement(type_el, "icon").text = small_icon
+            ET.SubElement(type_el, "bigIcon").text = large_icon
+            ET.SubElement(type_el, "label").text = type_data.name
+            ET.SubElement(type_el, "description").text = type_data.comment_plain
+            ET.SubElement(type_el, "category").text = "SimpleDocument"
+            ET.SubElement(type_el, "default-view").text = "view_documents"
+            layouts = ET.SubElement(type_el, "layouts",
+                attrib={"mode": "any"})
+            ET.SubElement(layouts, "layout").text = "heading"
+
+        # # below pollutes the "Create" dialog quite a bit
+        # for container in ["Folder", "Workspace"]:
+        #     for generated_type in generated_types:
+        #         ct = ET.SubElement(extension, "type",
+        #                            attrib={"id": container})
+        #         st = ET.SubElement(ct, "subtypes")
+        #         ET.SubElement(st, "type").text = generated_type.type_data.name
+
+        self.write_xml(
+            os.path.join(self.types_dir, NuxeoTypeTree.UI_TYPES_FILE),
+            component)
 
 
 def main():
@@ -273,5 +342,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

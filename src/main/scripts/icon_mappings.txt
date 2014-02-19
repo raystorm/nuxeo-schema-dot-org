@@ -1,0 +1,5 @@
+Thing   /icons/file.gif /icons/file_100.png
+CreativeWork    /icons/file.gif /icons/file_100.png
+MusicRecording  /icons/audio.png    /icons/audio_100.png
+VideoObject /icons/video.png    /icons/video_100.png
+Movie   /icons/video.png    /icons/video_100.png
