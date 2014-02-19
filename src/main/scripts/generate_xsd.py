@@ -76,38 +76,47 @@ def munge_element_name(prop_name):
     return prop_name + "_" if prop_name.endswith("Type") else prop_name
 
 
-def write_tree(item_type, output_file):
-    schema = ET.Element(_xs("schema"),
-                        attrib={"targetNamespace": item_type.url})
+class NuxeoFileGenerator(object):
+    def __init__(self, parser, parent_type_name, target_dir):
+        self.parser = parser
+        self.parent_type_name = parent_type_name
+        self.target_dir = target_dir
 
-    for type_name, type_url in item_type.ancestors:
-        ET.SubElement(schema, _xs("import"),
-                      attrib={"namespace": type_url,
-                              "schemaLocation": type_name + ".xsd"})
+    def write_xsd(self, item_type):
+        schema = ET.Element(_xs("schema"),
+                            attrib={"targetNamespace": item_type.url})
 
-    for prop_name, prop_type, prop_doc in item_type.specific_properties:
-        el = ET.SubElement(schema, _xs("element"),
-                           attrib={"name": munge_element_name(prop_name),
-                                   "type": prop_type})
-        ann = ET.SubElement(el, _xs("annotation"))
-        doc = ET.SubElement(ann, _xs("documentation"))
-        doc.text = prop_doc
+        for type_name, type_url in item_type.ancestors:
+            ET.SubElement(schema, _xs("import"),
+                          attrib={"namespace": type_url,
+                                  "schemaLocation": type_name + ".xsd"})
 
-    ET.ElementTree(schema).write(output_file, xml_declaration=True,
+        for prop_name, prop_type, prop_doc in item_type.specific_properties:
+            el = ET.SubElement(schema, _xs("element"),
+                               attrib={"name": munge_element_name(prop_name),
+                                       "type": prop_type})
+            ann = ET.SubElement(el, _xs("annotation"))
+            doc = ET.SubElement(ann, _xs("documentation"))
+            doc.text = prop_doc
+
+        path = os.path.join(self.target_dir, "%s.xsd" % item_type.name)
+        ET.ElementTree(schema).write(path, xml_declaration=True,
                                      encoding="utf-8")
 
+    def is_descendant(self, item_type):
+        result = self.parent_type_name in [x[0] for x in item_type.ancestors]
+        return result or item_type.name in (self.parent_type_name, 'Thing')
 
-def emit_xsd(item_type):
-    path = os.path.join(TARGET_DIR, "%s.xsd" % item_type.name)
-    with open(path, "w") as output:
-        write_tree(item_type, output)
+    def generate(self):
+        for item_type in self.parser.parse_types():
+            if self.is_descendant(item_type):
+                self.write_xsd(item_type)
 
 
 if __name__ == "__main__":
-    shutil.rmtree(TARGET_DIR)
+    shutil.rmtree(TARGET_DIR, ignore_errors=True)
     os.makedirs(TARGET_DIR)
     parser = RdfsOrgParser(ALL_JSON_URL)
-    for datatype in parser.parse_types():
-        is_creative_work = 'CreativeWork' in [x[0] for x in datatype.ancestors]
-        if is_creative_work or datatype.name in ('CreativeWork', 'Thing'):
-            emit_xsd(datatype)
+    generator = NuxeoFileGenerator(parser, 'CreativeWork', TARGET_DIR)
+    generator.generate()
+
