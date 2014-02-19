@@ -1,7 +1,72 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <component name="com.courseload.nuxeo.schemadotorg.coreTypes">
-  <extension target="org.nuxeo.ecm.core.schema.TypeService" point="schema">
-    <schema name="Thing" src="schema/Thing.xsd" prefix="thing"/>
-    <schema name="CreativeWork" src="schema/CreativeWork.xsd" prefix="creativework"/>
-  </extension>
+	<extension point="schema" target="org.nuxeo.ecm.core.schema.TypeService">
+		<schema name="APIReference" prefix="apireference" src="schema/APIReference.xsd"/>
+		<schema name="Article" prefix="article" src="schema/Article.xsd"/>
+		<schema name="BlogPosting" prefix="blogposting" src="schema/BlogPosting.xsd"/>
+		<schema name="Recipe" prefix="recipe" src="schema/Recipe.xsd"/>
+		<schema name="MediaObject" prefix="mediaobject" src="schema/MediaObject.xsd"/>
+		<schema name="TVEpisode" prefix="tvepisode" src="schema/TVEpisode.xsd"/>
+		<schema name="Photograph" prefix="photograph" src="schema/Photograph.xsd"/>
+		<schema name="WPAdBlock" prefix="wpadblock" src="schema/WPAdBlock.xsd"/>
+		<schema name="RadioEpisode" prefix="radioepisode" src="schema/RadioEpisode.xsd"/>
+		<schema name="Book" prefix="book" src="schema/Book.xsd"/>
+		<schema name="Diet" prefix="diet" src="schema/Diet.xsd"/>
+		<schema name="CreativeWork" prefix="creativework" src="schema/CreativeWork.xsd"/>
+		<schema name="Painting" prefix="painting" src="schema/Painting.xsd"/>
+		<schema name="WebPageElement" prefix="webpageelement" src="schema/WebPageElement.xsd"/>
+		<schema name="TechArticle" prefix="techarticle" src="schema/TechArticle.xsd"/>
+		<schema name="Series" prefix="series" src="schema/Series.xsd"/>
+		<schema name="Dataset" prefix="dataset" src="schema/Dataset.xsd"/>
+		<schema name="VideoObject" prefix="videoobject" src="schema/VideoObject.xsd"/>
+		<schema name="ImageObject" prefix="imageobject" src="schema/ImageObject.xsd"/>
+		<schema name="TVClip" prefix="tvclip" src="schema/TVClip.xsd"/>
+		<schema name="WebApplication" prefix="webapplication" src="schema/WebApplication.xsd"/>
+		<schema name="ContactPage" prefix="contactpage" src="schema/ContactPage.xsd"/>
+		<schema name="Review" prefix="review" src="schema/Review.xsd"/>
+		<schema name="RadioClip" prefix="radioclip" src="schema/RadioClip.xsd"/>
+		<schema name="VideoGallery" prefix="videogallery" src="schema/VideoGallery.xsd"/>
+		<schema name="Code" prefix="code" src="schema/Code.xsd"/>
+		<schema name="DataCatalog" prefix="datacatalog" src="schema/DataCatalog.xsd"/>
+		<schema name="Movie" prefix="movie" src="schema/Movie.xsd"/>
+		<schema name="CheckoutPage" prefix="checkoutpage" src="schema/CheckoutPage.xsd"/>
+		<schema name="ItemPage" prefix="itempage" src="schema/ItemPage.xsd"/>
+		<schema name="WPSideBar" prefix="wpsidebar" src="schema/WPSideBar.xsd"/>
+		<schema name="TVSeason" prefix="tvseason" src="schema/TVSeason.xsd"/>
+		<schema name="SoftwareApplication" prefix="softwareapplication" src="schema/SoftwareApplication.xsd"/>
+		<schema name="SearchResultsPage" prefix="searchresultspage" src="schema/SearchResultsPage.xsd"/>
+		<schema name="MusicPlaylist" prefix="musicplaylist" src="schema/MusicPlaylist.xsd"/>
+		<schema name="WPHeader" prefix="wpheader" src="schema/WPHeader.xsd"/>
+		<schema name="DataDownload" prefix="datadownload" src="schema/DataDownload.xsd"/>
+		<schema name="NewsArticle" prefix="newsarticle" src="schema/NewsArticle.xsd"/>
+		<schema name="MusicRecording" prefix="musicrecording" src="schema/MusicRecording.xsd"/>
+		<schema name="CollectionPage" prefix="collectionpage" src="schema/CollectionPage.xsd"/>
+		<schema name="ImageGallery" prefix="imagegallery" src="schema/ImageGallery.xsd"/>
+		<schema name="SiteNavigationElement" prefix="sitenavigationelement" src="schema/SiteNavigationElement.xsd"/>
+		<schema name="MobileApplication" prefix="mobileapplication" src="schema/MobileApplication.xsd"/>
+		<schema name="Sculpture" prefix="sculpture" src="schema/Sculpture.xsd"/>
+		<schema name="WebPage" prefix="webpage" src="schema/WebPage.xsd"/>
+		<schema name="ExercisePlan" prefix="exerciseplan" src="schema/ExercisePlan.xsd"/>
+		<schema name="Table" prefix="table" src="schema/Table.xsd"/>
+		<schema name="MusicVideoObject" prefix="musicvideoobject" src="schema/MusicVideoObject.xsd"/>
+		<schema name="AboutPage" prefix="aboutpage" src="schema/AboutPage.xsd"/>
+		<schema name="WPFooter" prefix="wpfooter" src="schema/WPFooter.xsd"/>
+		<schema name="AudioObject" prefix="audioobject" src="schema/AudioObject.xsd"/>
+		<schema name="ProfilePage" prefix="profilepage" src="schema/ProfilePage.xsd"/>
+		<schema name="Episode" prefix="episode" src="schema/Episode.xsd"/>
+		<schema name="RadioSeason" prefix="radioseason" src="schema/RadioSeason.xsd"/>
+		<schema name="Thing" prefix="thing" src="schema/Thing.xsd"/>
+		<schema name="Comment" prefix="comment" src="schema/Comment.xsd"/>
+		<schema name="Clip" prefix="clip" src="schema/Clip.xsd"/>
+		<schema name="TVSeries" prefix="tvseries" src="schema/TVSeries.xsd"/>
+		<schema name="MedicalWebPage" prefix="medicalwebpage" src="schema/MedicalWebPage.xsd"/>
+		<schema name="Blog" prefix="blog" src="schema/Blog.xsd"/>
+		<schema name="Map" prefix="map" src="schema/Map.xsd"/>
+		<schema name="RadioSeries" prefix="radioseries" src="schema/RadioSeries.xsd"/>
+		<schema name="ScholarlyArticle" prefix="scholarlyarticle" src="schema/ScholarlyArticle.xsd"/>
+		<schema name="MusicAlbum" prefix="musicalbum" src="schema/MusicAlbum.xsd"/>
+		<schema name="ItemList" prefix="itemlist" src="schema/ItemList.xsd"/>
+		<schema name="MedicalScholarlyArticle" prefix="medicalscholarlyarticle" src="schema/MedicalScholarlyArticle.xsd"/>
+		<schema name="Season" prefix="season" src="schema/Season.xsd"/>
+	</extension>
 </component>
