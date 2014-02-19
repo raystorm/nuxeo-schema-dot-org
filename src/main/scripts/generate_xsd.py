@@ -7,8 +7,9 @@ import xml.etree.ElementTree as ET
 
 
 ALL_JSON_URL = "http://schema.rdfs.org/all.json"
-TARGET_DIR = "../../../target/generated-sources/schema"
+TARGET_DIR = "../../../target/generated-sources"
 XS_URL = "http://www.w3.org/2001/XMLSchema"
+
 
 ET.register_namespace("xs", XS_URL)
 
@@ -103,17 +104,55 @@ class NuxeoType(object):
 
 
 class NuxeoTypeTree(object):
+    CORE_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.coreTypes"
+    CORE_TYPES_FILE = "core-types-contrib.xml"
+    TYPES_DIR = "osgi"
+    SCHEMA_DIR = "schema"
+
     def __init__(self, terms, parent_type_name, target_dir):
         self.nuxeo_types = (NuxeoType(term) for term in terms)
         self.parent_type_name = parent_type_name
         self.target_dir = target_dir
+        self.schema_dir = os.path.join(target_dir, NuxeoTypeTree.SCHEMA_DIR)
+        self.types_dir = os.path.join(target_dir, NuxeoTypeTree.TYPES_DIR)
+        os.makedirs(self.schema_dir)
+        os.makedirs(self.types_dir)
 
     def generate(self):
+        generated_types = []
+
         for nuxeo_type in self.nuxeo_types:
             if nuxeo_type.is_descendant(self.parent_type_name):
-                xsd_path = os.path.join(self.target_dir, '%s.xsd' %
+                xsd_path = os.path.join(self.schema_dir, '%s.xsd' %
                                         nuxeo_type.type_data.name)
                 nuxeo_type.write_xsd(xsd_path)
+                generated_types.append(nuxeo_type)
+
+        self.generate_schema_contrib(generated_types)
+
+    def generate_schema_contrib(self, generated_types):
+        component = ET.Element(
+            "component",
+            attrib={"name": NuxeoTypeTree.CORE_TYPES_NAME})
+        extension = ET.SubElement(
+            component,
+            "extension",
+            attrib={"target": "org.nuxeo.ecm.core.schema.TypeService",
+                    "point": "schema"})
+
+        for generated_type in generated_types:
+            name = generated_type.type_data.name
+            ET.SubElement(
+                extension,
+                "schema",
+                attrib={"name": name,
+                        "src": "schema/%s.xsd" % name,
+                        "prefix": name.lower()})
+
+        ET.ElementTree(component).write(
+            os.path.join(self.types_dir, NuxeoTypeTree.CORE_TYPES_FILE),
+            xml_declaration=True,
+            encoding="utf-8")
 
 
 def main():
