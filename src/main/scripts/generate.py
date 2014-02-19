@@ -23,6 +23,69 @@ def _xs(element_name):
     return "{%s}%s" % (XS_URL, element_name)
 
 
+
+# Source: http://code.activestate.com/recipes/578272-topological-sort/
+#
+# Copyright (c) 2012 Sam Denton
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+def toposort(data):
+    """Dependencies are expressed as a dictionary whose keys are items
+and whose values are a set of dependent items. Output is a list of
+sets in topological order. The first set consists of items with no
+dependences, each subsequent set consists of items that depend upon
+items in the preceeding sets.
+
+>>> print '\\n'.join(repr(sorted(x)) for x in toposort({
+...     2: set([11]),
+...     9: set([11,8]),
+...     10: set([11,3]),
+...     11: set([7,5]),
+...     8: set([7,3]),
+...     }) )
+[3, 5, 7]
+[8, 11]
+[2, 9, 10]
+
+"""
+
+    from functools import reduce
+
+    # Ignore self dependencies.
+    for k, v in data.items():
+        v.discard(k)
+    # Find all items that don't depend on anything.
+    extra_items_in_deps = reduce(set.union, data.itervalues()) - set(data.iterkeys())
+    # Add empty dependences where needed
+    data.update({item:set() for item in extra_items_in_deps})
+    while True:
+        ordered = set(item for item, dep in data.iteritems() if not dep)
+        if not ordered:
+            break
+        yield ordered
+        data = {item: (dep - ordered)
+                for item, dep in data.iteritems()
+                if item not in ordered}
+    assert not data, "Cyclic dependencies exist among these items:\n%s" % '\n'.join(repr(x) for x in data.iteritems())
+
+
 class SchemaTerms(object):
     def __init__(self, data):
         self.property_types = {}
@@ -103,6 +166,9 @@ class NuxeoType(object):
         result = type_name in [x[0] for x in self.type_data.ancestors]
         return result or self.type_data.name in (type_name, 'Thing')
 
+    def dependencies(self):
+        return (self.type_data.name, set(x[0] for x in self.type_data.ancestors))
+
 
 class NuxeoTypeTree(object):
     CORE_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.coreTypes"
@@ -122,17 +188,20 @@ class NuxeoTypeTree(object):
         os.makedirs(self.types_dir)
 
     def generate(self):
-        generated_types = []
+        generated_types = {}
 
         for nuxeo_type in self.nuxeo_types:
             if nuxeo_type.is_descendant(self.parent_type_name):
                 xsd_path = os.path.join(self.schema_dir, '%s.xsd' %
                                         nuxeo_type.type_data.name)
                 nuxeo_type.write_xsd(xsd_path)
-                generated_types.append(nuxeo_type)
+                generated_types[nuxeo_type.type_data.name] = nuxeo_type
 
-        self.generate_schema_contrib(generated_types)
-        self.generate_doctype_contrib(generated_types)
+        deps = dict(x.dependencies() for x in generated_types.values())
+        order = list(itertools.chain(*toposort(deps)))
+        ordered_types = [generated_types[x] for x in order]
+        self.generate_schema_contrib(ordered_types)
+        self.generate_doctype_contrib(ordered_types)
 
     def generate_schema_contrib(self, generated_types):
         component = ET.Element(
