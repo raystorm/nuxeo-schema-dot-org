@@ -1,4 +1,5 @@
 import collections
+import itertools
 import json
 import os
 import shutil
@@ -106,6 +107,8 @@ class NuxeoType(object):
 class NuxeoTypeTree(object):
     CORE_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.coreTypes"
     CORE_TYPES_FILE = "core-types-contrib.xml"
+    DOC_TYPES_NAME = "com.courseload.nuxeo.schemadotorg.types"
+    DOC_TYPES_FILE = "ecm-types-contrib.xml"
     TYPES_DIR = "osgi"
     SCHEMA_DIR = "schema"
 
@@ -129,6 +132,7 @@ class NuxeoTypeTree(object):
                 generated_types.append(nuxeo_type)
 
         self.generate_schema_contrib(generated_types)
+        self.generate_doctype_contrib(generated_types)
 
     def generate_schema_contrib(self, generated_types):
         component = ET.Element(
@@ -151,6 +155,41 @@ class NuxeoTypeTree(object):
 
         ET.ElementTree(component).write(
             os.path.join(self.types_dir, NuxeoTypeTree.CORE_TYPES_FILE),
+            xml_declaration=True,
+            encoding="utf-8")
+
+    def generate_doctype_contrib(self, generated_types):
+        component = ET.Element(
+            "component",
+            attrib={"name": NuxeoTypeTree.DOC_TYPES_NAME})
+
+        require = ET.SubElement(
+            component,
+            "require")
+        require.text = NuxeoTypeTree.CORE_TYPES_NAME
+
+        extension = ET.SubElement(
+            component,
+            "extension",
+            attrib={"target": "org.nuxeo.ecm.core.schema.TypeService",
+                    "point": "doctype"})
+
+        for generated_type in generated_types:
+            ancestor_names = (a[0] for a in generated_type.type_data.ancestors)
+            doctype = ET.SubElement(
+                extension,
+                "doctype",
+                attrib={"name": generated_type.type_data.name,
+                        "extends": "File"})
+            for schema in itertools.chain(['common', 'dublincore'],
+                                          ancestor_names):
+                ET.SubElement(
+                    doctype,
+                    "schema",
+                    attrib={"name": schema})
+
+        ET.ElementTree(component).write(
+            os.path.join(self.types_dir, NuxeoTypeTree.DOC_TYPES_FILE),
             xml_declaration=True,
             encoding="utf-8")
 
