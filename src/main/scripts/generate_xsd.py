@@ -21,17 +21,15 @@ def _xs(element_name):
     return "{%s}%s" % (XS_URL, element_name)
 
 
-class RdfsOrgParser(object):
-    def __init__(self, url):
-        self.url = url
+class SchemaTerms(object):
+    def __init__(self, data):
         self.property_types = {}
         self.property_docs = {}
         self.type_urls = {}
-        self.data = None
+        self.data = data
+        self.setup()
 
     def setup(self):
-        self.data = json.load(urllib2.urlopen(self.url))
-
         for prop in self.data["properties"].values():
             key = prop["id"]
             doc = prop["comment_plain"]
@@ -56,8 +54,7 @@ class RdfsOrgParser(object):
         self.type_urls = dict([(item_type["id"], item_type["url"])
                                for item_type in self.data["types"].values()])
 
-    def parse_types(self):
-        self.setup()
+    def __iter__(self):
         for type_data in self.data['types'].values():
             props = [(prop, self.property_types[prop], self.property_docs[prop])
                      for prop in type_data['specific_properties']]
@@ -76,9 +73,9 @@ def munge_element_name(prop_name):
     return prop_name + "_" if prop_name.endswith("Type") else prop_name
 
 
-class NuxeoFileGenerator(object):
-    def __init__(self, parser, parent_type_name, target_dir):
-        self.parser = parser
+class NuxeoTypeTree(object):
+    def __init__(self, terms, parent_type_name, target_dir):
+        self.terms = terms
         self.parent_type_name = parent_type_name
         self.target_dir = target_dir
 
@@ -108,7 +105,7 @@ class NuxeoFileGenerator(object):
         return result or item_type.name in (self.parent_type_name, 'Thing')
 
     def generate(self):
-        for item_type in self.parser.parse_types():
+        for item_type in self.terms:
             if self.is_descendant(item_type):
                 self.write_xsd(item_type)
 
@@ -116,7 +113,7 @@ class NuxeoFileGenerator(object):
 if __name__ == "__main__":
     shutil.rmtree(TARGET_DIR, ignore_errors=True)
     os.makedirs(TARGET_DIR)
-    parser = RdfsOrgParser(ALL_JSON_URL)
-    generator = NuxeoFileGenerator(parser, 'CreativeWork', TARGET_DIR)
-    generator.generate()
-
+    data = json.load(urllib2.urlopen(ALL_JSON_URL))
+    schema_terms = SchemaTerms(data)
+    nuxeo_types = NuxeoTypeTree(schema_terms, 'CreativeWork', TARGET_DIR)
+    nuxeo_types.generate()
