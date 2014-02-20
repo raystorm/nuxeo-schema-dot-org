@@ -11,7 +11,7 @@ that provides additional document metadata schemas and document types
 for use in your Nuxeo repository.  It uses the extensive set of
 vocabulary terms from [Schema.org](https://schema.org) to avoid
 constructing an additional
-[ontology](http://en.wikipedia.org/wiki/Ontology_(information_science))
+[ontology](http://en.wikipedia.org/wiki/Ontology_%28information_science%29)
 for describing the items covered by Schema.org's classification
 system.
 
@@ -43,5 +43,27 @@ implementation available to the public.
 How can I use this?
 -------------------
 
-TODO: finish writing.
+First, you need to install some prerequisites:
+
+* A server running the Nuxeo Platform, version 5.8 or greater:
+  <http://www.nuxeo.com/en/downloads>
+* Java 7 JDK:
+  <http://www.oracle.com/technetwork/java/javase/downloads/index.html>
+* Apache Maven: <http://maven.apache.org>
+
+After installing this software, you should be able to execute the
+following command at the Git repository root:
+
+     $ mvn package
+
+The Nuxeo Marketplace package will be built as
+`./target/schema-dot-org-nuxeo-package.zip`.  You can use whatever
+method you prefer to install this package on your Nuxeo instance, for
+example the **Upload a package** button in the web-based
+[Admin Center](http://doc.nuxeo.com/display/public/ADMINDOC/Installing+a+New+Package+on+Your+Instance)
+or the
+[nuxeoctl](http://doc.nuxeo.com/display/public/ADMINDOC/nuxeoctl+and+Control+Panel+Usage)
+command-line tool.
+
+![Nuxeo Admin Center screenshot][https://raw.github.com/courseload/nuxeo-schema-dot-org/master/doc/img/admincenter.png]
 
