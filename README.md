@@ -65,5 +65,5 @@ or the
 [nuxeoctl](http://doc.nuxeo.com/display/public/ADMINDOC/nuxeoctl+and+Control+Panel+Usage)
 command-line tool.
 
-![Nuxeo Admin Center screenshot][https://raw.github.com/courseload/nuxeo-schema-dot-org/master/doc/img/admincenter.png]
+![Nuxeo Admin Center screenshot](doc/img/admincenter.png)
 
