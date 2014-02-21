@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 
 ALL_JSON_URL = "http://schema.rdfs.org/all.json"
-TARGET_DIR = "../../../target/generated-sources"
+TARGET_DIR = "../../../tmp"
 XS_URL = "http://www.w3.org/2001/XMLSchema"
 
 
@@ -140,12 +140,20 @@ def munge_element_name(prop_name):
 
 
 class NuxeoType(object):
+    LIST_TYPES_URI = "http://courseload.com/nuxeo/listTypes"
+    LIST_TYPES_PATH = "listTypes.xsd"
+
     def __init__(self, type_data):
         self.type_data = type_data
 
     def write_xsd(self, output_file_name):
         schema = ET.Element(_xs("schema"),
-                            attrib={"targetNamespace": self.type_data.url})
+                            attrib={"targetNamespace": self.type_data.url,
+                                    "xmlns:lt" : NuxeoType.LIST_TYPES_URI})
+
+        ET.SubElement(schema, _xs("import"),
+                      attrib={"namespace": NuxeoType.LIST_TYPES_URI,
+                              "schemaLocation": NuxeoType.LIST_TYPES_PATH})
 
         for type_name, type_url in self.type_data.ancestors:
             ET.SubElement(schema, _xs("import"),
@@ -153,6 +161,8 @@ class NuxeoType(object):
                                   "schemaLocation": type_name + ".xsd"})
 
         for prop_name, prop_type, prop_doc in self.type_data.specific_properties:
+            if prop_name == 'author':
+                prop_type = 'lt:textList'
             el = ET.SubElement(schema, _xs("element"),
                                attrib={"name": munge_element_name(prop_name),
                                        "type": prop_type})
@@ -240,7 +250,9 @@ class NuxeoTypeTree(object):
             "extension",
             attrib={"target": "org.nuxeo.ecm.core.schema.TypeService",
                     "point": "schema"})
-
+        ET.SubElement(extension, "schema",
+                      attrib={"name": "listTypes",
+                              "src": "schema/listTypes.xsd"})
         for generated_type in generated_types:
             name = generated_type.type_data.name
             ET.SubElement(
@@ -322,7 +334,7 @@ class NuxeoTypeTree(object):
             ET.SubElement(type_el, "default-view").text = "view_documents"
             layouts = ET.SubElement(type_el, "layouts",
                 attrib={"mode": "any"})
-            ET.SubElement(layouts, "layout").text = "heading"
+            ET.SubElement(layouts, "layout").text = "creative_work"
 
         for container in ["Folder", "Workspace"]:
             ct = ET.SubElement(extension, "type", attrib={"id": container})

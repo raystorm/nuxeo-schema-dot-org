@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
-<xs:schema targetNamespace="http://schema.org/CreativeWork" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://schema.org/CreativeWork" xmlns:lt="http://courseload.com/nuxeo/listTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://courseload.com/nuxeo/listTypes" schemaLocation="listTypes.xsd"/>
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:element name="about" type="xs:string">
 		<xs:annotation>
@@ -57,7 +58,7 @@
 			<xs:documentation>An embedded audio object.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="author" type="xs:string">
+	<xs:element name="author" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>The author of this content. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.</xs:documentation>
 		</xs:annotation>

@@ -1,0 +1,8 @@
+<xs:schema targetNamespace="http://courseload.com/nuxeo/listTypes"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="textList">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+
+</xs:schema>

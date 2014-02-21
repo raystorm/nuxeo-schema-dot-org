@@ -10,7 +10,7 @@
 			<category>SimpleDocument</category>
 			<default-view>view_documents</default-view>
 			<layouts mode="any">
-				<layout>heading</layout>
+				<layout>creative_work</layout>
 			</layouts>
 		</type>
 		<type id="Book">
@@ -21,7 +21,7 @@
 			<category>SimpleDocument</category>
 			<default-view>view_documents</default-view>
 			<layouts mode="any">
-				<layout>heading</layout>
+				<layout>creative_work</layout>
 			</layouts>
 		</type>
 		<type id="Article">
@@ -32,7 +32,7 @@
 			<category>SimpleDocument</category>
 			<default-view>view_documents</default-view>
 			<layouts mode="any">
-				<layout>heading</layout>
+				<layout>creative_work</layout>
 			</layouts>
 		</type>
 		<type id="AudioObject">
@@ -43,7 +43,7 @@
 			<category>SimpleDocument</category>
 			<default-view>view_documents</default-view>
 			<layouts mode="any">
-				<layout>heading</layout>
+				<layout>creative_work</layout>
 			</layouts>
 		</type>
 		<type id="VideoObject">
@@ -54,7 +54,7 @@
 			<category>SimpleDocument</category>
 			<default-view>view_documents</default-view>
 			<layouts mode="any">
-				<layout>heading</layout>
+				<layout>creative_work</layout>
 			</layouts>
 		</type>
 		<type id="Folder">

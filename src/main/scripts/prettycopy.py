@@ -1,7 +1,7 @@
 import os
 import xml.dom.minidom
 
-SOURCE_DIR = "../../../target/generated-sources"
+SOURCE_DIR = "../../../tmp"
 TARGET_DIR = "../../../src/main/resources"
 
 
