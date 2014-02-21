@@ -225,7 +225,8 @@ class NuxeoTypeTree(object):
         ordered_types = [generated_types[x] for x in order]
         self.generate_schema_contrib(ordered_types)
         self.generate_doctype_contrib(ordered_types)
-        self.generate_ui_contrib(ordered_types)
+        self.generate_ui_contrib(list(t for t in ordered_types
+                                      if t.type_data.name in self.icons))
 
     def write_xml(self, path, node):
         ET.ElementTree(node).write(path, xml_declaration=True, encoding="utf-8")
@@ -323,13 +324,11 @@ class NuxeoTypeTree(object):
                 attrib={"mode": "any"})
             ET.SubElement(layouts, "layout").text = "heading"
 
-        # # below pollutes the "Create" dialog quite a bit
-        # for container in ["Folder", "Workspace"]:
-        #     for generated_type in generated_types:
-        #         ct = ET.SubElement(extension, "type",
-        #                            attrib={"id": container})
-        #         st = ET.SubElement(ct, "subtypes")
-        #         ET.SubElement(st, "type").text = generated_type.type_data.name
+        for container in ["Folder", "Workspace"]:
+            ct = ET.SubElement(extension, "type", attrib={"id": container})
+            st = ET.SubElement(ct, "subtypes")
+            for generated_type in generated_types:
+                ET.SubElement(st, "type").text = generated_type.type_data.name
 
         self.write_xml(
             os.path.join(self.types_dir, NuxeoTypeTree.UI_TYPES_FILE),

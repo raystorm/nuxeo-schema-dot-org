@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.0.0
 Bundle-Vendor: Courseload
 Bundle-Category: runtime
 Bundle-Localization: plugin

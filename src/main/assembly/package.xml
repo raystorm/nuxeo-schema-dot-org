@@ -5,7 +5,6 @@
   <classifier>Open Source</classifier>
   <home-page>https://github.com/courseload/nuxeo-schema-dot-org</home-page>
   <platforms>
-    <platform>nuxeo-dm-5.8.0</platform>
-    <platform>nuxeo-dm-5.9.0</platform>
+    <platform>cap-5.8</platform>
   </platforms>
 </package>
