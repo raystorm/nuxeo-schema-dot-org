@@ -18,12 +18,12 @@
         <row>
           <widget>author</widget>
         </row>
-        <!--<row>-->
-          <!--<widget>keywords</widget>-->
-        <!--</row>-->
-        <!--<row>-->
-          <!--<widget>accessibilityFeature</widget>-->
-        <!--</row>-->
+        <row>
+          <widget>url</widget>
+        </row>
+        <row>
+          <widget>accessibilityFeatures</widget>
+        </row>
       </rows>
 
       <widget name="title" type="text">
@@ -67,6 +67,29 @@
             </fields>
           </widget>
         </subWidgets>
+      </widget>
+
+      <widget name="url" type="text">
+        <labels>
+          <label mode="any">URL</label>
+        </labels>
+        <translated>false</translated>
+        <fields>
+          <field>thing:url</field>
+        </fields>
+      </widget>
+
+      <widget name="accessibilityFeatures" type="selectManyDirectory">
+        <labels>
+          <label mode="any">Accessibility features</label>
+        </labels>
+        <translated>false</translated>
+        <fields>
+          <field>creativework:accessibilityFeature</field>
+        </fields>
+        <properties widgetMode="any">
+          <property name="directoryName">accessibilityFeatures</property>
+        </properties>
       </widget>
 
     </layout>

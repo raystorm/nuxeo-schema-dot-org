@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<component name="com.courseload.nuxeo.schemadotorg.directories">
+  <require>org.nuxeo.ecm.directories</require>
+
+  <extension target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory"
+             point="directories">
+
+    <directory name="accessibilityFeatures">
+      <schema>vocabulary</schema>
+      <dataSource>java:/nxsqldirectory</dataSource>
+      <dataFile>directories/accessibilityFeatures.csv</dataFile>
+      <createTablePolicy>always</createTablePolicy>
+      <cacheTimeout>3600</cacheTimeout>
+      <cacheMaxSize>1000</cacheMaxSize>
+      <table>accessibility_features</table>
+      <idField>id</idField>
+      <autoincrementIdField>false</autoincrementIdField>
+    </directory>
+
+  </extension>
+
+</component>

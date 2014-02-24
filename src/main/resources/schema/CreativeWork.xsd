@@ -18,7 +18,7 @@
 			<xs:documentation>Identifies input methods that are sufficient to fully control the described resource (WebSchemas wiki lists possible values).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="accessibilityFeature" type="xs:string">
+	<xs:element name="accessibilityFeature" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).</xs:documentation>
 		</xs:annotation>
