@@ -1,0 +1,15 @@
+Thing   additionalType
+CreativeWork    awards
+CreativeWork    creator
+CreativeWork    educationalAlignment
+CreativeWork    encodings
+CreativeWork    reviews
+Episode actors
+Episode directors
+TVEpisode   partOfTVSeries
+Movie   actors
+Movie   directors
+MusicPlaylist   tracks
+Season  episodes
+TVSeason    partOfTVSeries
+WebPage significantLinks
