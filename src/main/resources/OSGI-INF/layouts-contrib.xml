@@ -24,6 +24,9 @@
         <row>
           <widget>accessibilityFeatures</widget>
         </row>
+        <row>
+          <widget>keywords</widget>
+        </row>
       </rows>
 
       <widget name="title" type="text">
@@ -90,6 +93,26 @@
         <properties widgetMode="any">
           <property name="directoryName">accessibilityFeatures</property>
         </properties>
+      </widget>
+
+      <widget name="keywords" type="list">
+        <labels>
+          <label mode="any">Keywords</label>
+        </labels>
+        <translated>false</translated>
+        <fields>
+          <field>creativework:keywords</field>
+        </fields>
+        <properties widgetMode="any">
+          <property name="hideSubLabels">true</property>
+        </properties>
+        <subWidgets>
+          <widget name="keywordItem" type="text">
+            <fields>
+              <field></field>
+            </fields>
+          </widget>
+        </subWidgets>
       </widget>
 
     </layout>

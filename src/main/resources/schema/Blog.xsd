@@ -3,7 +3,7 @@
 	<xs:import namespace="http://courseload.com/nuxeo/listTypes" schemaLocation="listTypes.xsd"/>
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
-	<xs:element name="blogPost" type="xs:string">
+	<xs:element name="blogPost" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A posting that is part of this blog.</xs:documentation>
 		</xs:annotation>

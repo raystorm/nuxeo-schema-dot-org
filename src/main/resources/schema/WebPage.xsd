@@ -3,7 +3,7 @@
 	<xs:import namespace="http://courseload.com/nuxeo/listTypes" schemaLocation="listTypes.xsd"/>
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
-	<xs:element name="breadcrumb" type="xs:string">
+	<xs:element name="breadcrumb" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A set of links that can help a user understand and navigate a website hierarchy.</xs:documentation>
 		</xs:annotation>
@@ -28,17 +28,17 @@
 			<xs:documentation>Indicates the main image on the page</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="relatedLink" type="xs:anyURI">
+	<xs:element name="relatedLink" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A link related to this web page, for example to other related web pages.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="reviewedBy" type="xs:string">
+	<xs:element name="reviewedBy" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>People or organizations that have reviewed the content on this web page for accuracy and/or completeness.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="significantLink" type="xs:anyURI">
+	<xs:element name="significantLink" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.</xs:documentation>
 		</xs:annotation>

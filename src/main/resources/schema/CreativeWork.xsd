@@ -7,13 +7,13 @@
 			<xs:documentation>The subject matter of the content.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="accessibilityAPI" type="xs:string">
+	<xs:element name="accessibilityAPI" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).
      </xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="accessibilityControl" type="xs:string">
+	<xs:element name="accessibilityControl" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Identifies input methods that are sufficient to fully control the described resource (WebSchemas wiki lists possible values).</xs:documentation>
 		</xs:annotation>
@@ -23,7 +23,7 @@
 			<xs:documentation>Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="accessibilityHazard" type="xs:string">
+	<xs:element name="accessibilityHazard" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. (WebSchemas wiki lists possible values)</xs:documentation>
 		</xs:annotation>
@@ -63,7 +63,7 @@
 			<xs:documentation>The author of this content. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="award" type="xs:string">
+	<xs:element name="award" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>An award won by this person or for this creative work.</xs:documentation>
 		</xs:annotation>
@@ -73,12 +73,12 @@
 			<xs:documentation>Awards won by this person or for this creative work. (legacy spelling; see singular form, award)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="citation" type="xs:string">
+	<xs:element name="citation" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="comment" type="xs:string">
+	<xs:element name="comment" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Comments, typically from users, on this CreativeWork.</xs:documentation>
 		</xs:annotation>
@@ -93,7 +93,7 @@
 			<xs:documentation>Official rating of a piece of content—for example,'MPAA PG-13'.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="contributor" type="xs:string">
+	<xs:element name="contributor" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A secondary contributor to the CreativeWork.</xs:documentation>
 		</xs:annotation>
@@ -133,7 +133,7 @@
 			<xs:documentation>A link to the page containing the comments of the CreativeWork.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="editor" type="xs:string">
+	<xs:element name="editor" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Specifies the Person who edited the CreativeWork.</xs:documentation>
 		</xs:annotation>
@@ -148,7 +148,7 @@
 			<xs:documentation>The purpose of a work in the context of education; for example, 'assignment', 'group work'.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="encoding" type="xs:string">
+	<xs:element name="encoding" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A media object that encode this CreativeWork.</xs:documentation>
 		</xs:annotation>
@@ -173,7 +173,7 @@
 			<xs:documentation>The language of the content. please use one of the language codes from the IETF BCP 47 standard.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="interactionCount" type="xs:string">
+	<xs:element name="interactionCount" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.</xs:documentation>
 		</xs:annotation>
@@ -183,7 +183,7 @@
 			<xs:documentation>The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="isBasedOnUrl" type="xs:anyURI">
+	<xs:element name="isBasedOnUrl" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html</xs:documentation>
 		</xs:annotation>
@@ -193,7 +193,7 @@
 			<xs:documentation>Indicates whether this content is family friendly.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="keywords" type="xs:string">
+	<xs:element name="keywords" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>The keywords/tags used to describe this content.</xs:documentation>
 		</xs:annotation>
@@ -203,12 +203,12 @@
 			<xs:documentation>The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="mentions" type="xs:string">
+	<xs:element name="mentions" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="offers" type="xs:string">
+	<xs:element name="offers" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>An offer to transfer some rights to an item or to provide a service—for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.</xs:documentation>
 		</xs:annotation>
@@ -228,7 +228,7 @@
 			<xs:documentation>Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="review" type="xs:string">
+	<xs:element name="review" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A review of the item.</xs:documentation>
 		</xs:annotation>

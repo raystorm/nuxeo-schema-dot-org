@@ -8,7 +8,7 @@
 			<xs:documentation>The actual body of the article.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="articleSection" type="xs:string">
+	<xs:element name="articleSection" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.</xs:documentation>
 		</xs:annotation>

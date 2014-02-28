@@ -4,7 +4,7 @@
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
 	<xs:import namespace="http://schema.org/Article" schemaLocation="Article.xsd"/>
-	<xs:element name="dependencies" type="xs:string">
+	<xs:element name="dependencies" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Prerequisites needed to fulfill steps in article.</xs:documentation>
 		</xs:annotation>

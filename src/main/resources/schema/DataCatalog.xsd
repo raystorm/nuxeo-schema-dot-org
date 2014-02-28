@@ -3,7 +3,7 @@
 	<xs:import namespace="http://courseload.com/nuxeo/listTypes" schemaLocation="listTypes.xsd"/>
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
-	<xs:element name="dataset" type="xs:string">
+	<xs:element name="dataset" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A dataset contained in a catalog.</xs:documentation>
 		</xs:annotation>

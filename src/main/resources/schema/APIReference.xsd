@@ -20,7 +20,7 @@
 			<xs:documentation>Indicates whether API is managed or unmanaged.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="targetPlatform" type="xs:string">
+	<xs:element name="targetPlatform" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>Type of app development: phone, Metro style, desktop, XBox, etc.</xs:documentation>
 		</xs:annotation>

@@ -4,7 +4,7 @@
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
 	<xs:import namespace="http://schema.org/WebPage" schemaLocation="WebPage.xsd"/>
-	<xs:element name="aspect" type="xs:string">
+	<xs:element name="aspect" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.</xs:documentation>
 		</xs:annotation>

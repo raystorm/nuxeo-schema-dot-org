@@ -13,7 +13,7 @@
 			<xs:documentation>The time it takes to actually cook the dish, in ISO 8601 duration format.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="ingredients" type="xs:string">
+	<xs:element name="ingredients" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>An ingredient used in the recipe.</xs:documentation>
 		</xs:annotation>

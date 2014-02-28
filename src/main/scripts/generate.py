@@ -143,8 +143,9 @@ class NuxeoType(object):
     LIST_TYPES_URI = "http://courseload.com/nuxeo/listTypes"
     LIST_TYPES_PATH = "listTypes.xsd"
 
-    def __init__(self, type_data):
+    def __init__(self, type_data, tree):
         self.type_data = type_data
+        self.tree = tree
 
     def write_xsd(self, output_file_name):
         schema = ET.Element(_xs("schema"),
@@ -161,7 +162,7 @@ class NuxeoType(object):
                                   "schemaLocation": type_name + ".xsd"})
 
         for prop_name, prop_type, prop_doc in self.type_data.specific_properties:
-            if prop_name == 'author':
+            if (self.type_data.name, prop_name) in self.tree.multiples:
                 prop_type = 'lt:textList'
             el = ET.SubElement(schema, _xs("element"),
                                attrib={"name": munge_element_name(prop_name),
@@ -191,10 +192,12 @@ class NuxeoTypeTree(object):
     TYPES_DIR = "osgi"
     SCHEMA_DIR = "schema"
     ICON_FILE = "icon_mappings.txt"
+    MULTIPLES_FILE = "valid_multiples.txt"
 
     def __init__(self, terms, parent_type_name, target_dir):
-        self.nuxeo_types = [NuxeoType(term) for term in terms]
-        self.icons = self.load_icons()
+        self.nuxeo_types = [NuxeoType(term, self) for term in terms]
+        self.load_icons()
+        self.load_multiples()
         self.parent_type_name = parent_type_name
         self.target_dir = target_dir
         self.schema_dir = os.path.join(target_dir, NuxeoTypeTree.SCHEMA_DIR)
@@ -208,7 +211,15 @@ class NuxeoTypeTree(object):
             for line in input_file:
                 name, small_icon, large_icon = line.split()
                 result[name] = (name, small_icon, large_icon)
-        return result
+        self.icons = result
+
+    def load_multiples(self):
+        result = []
+        with open(NuxeoTypeTree.MULTIPLES_FILE) as input_file:
+            for line in input_file:
+                key = line.split()
+                result.append(tuple(key))
+        self.multiples = set(result)
 
     def get_icons(self, type_data):
         if type_data.name in self.icons:

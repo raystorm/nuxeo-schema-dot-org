@@ -3,7 +3,7 @@
 	<xs:import namespace="http://courseload.com/nuxeo/listTypes" schemaLocation="listTypes.xsd"/>
 	<xs:import namespace="http://schema.org/Thing" schemaLocation="Thing.xsd"/>
 	<xs:import namespace="http://schema.org/CreativeWork" schemaLocation="CreativeWork.xsd"/>
-	<xs:element name="associatedArticle" type="xs:string">
+	<xs:element name="associatedArticle" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A NewsArticle associated with the Media Object.</xs:documentation>
 		</xs:annotation>

@@ -13,7 +13,7 @@
 			<xs:documentation>The format of the book.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="illustrator" type="xs:string">
+	<xs:element name="illustrator" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>The illustrator of the book.</xs:documentation>
 		</xs:annotation>
