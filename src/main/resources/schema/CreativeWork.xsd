@@ -68,11 +68,6 @@
 			<xs:documentation>An award won by this person or for this creative work.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="awards" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>Awards won by this person or for this creative work. (legacy spelling; see singular form, award)</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="citation" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</xs:documentation>
@@ -108,11 +103,6 @@
 			<xs:documentation>The year during which the claimed copyright for the CreativeWork was first asserted.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="creator" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>The creator/author of this CreativeWork or UserComments. This is the same as the Author property for CreativeWork.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="dateCreated" type="xs:date">
 		<xs:annotation>
 			<xs:documentation>The date on which the CreativeWork was created.</xs:documentation>
@@ -138,11 +128,6 @@
 			<xs:documentation>Specifies the Person who edited the CreativeWork.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="educationalAlignment" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>An alignment to an established educational framework.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="educationalUse" type="xs:string">
 		<xs:annotation>
 			<xs:documentation>The purpose of a work in the context of education; for example, 'assignment', 'group work'.</xs:documentation>
@@ -151,11 +136,6 @@
 	<xs:element name="encoding" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A media object that encode this CreativeWork.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="encodings" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>The media objects that encode this creative work (legacy spelling; see singular form, encoding).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="genre" type="xs:string">
@@ -231,11 +211,6 @@
 	<xs:element name="review" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>A review of the item.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="reviews" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>Review of the item (legacy spelling; see singular form, review).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="sourceOrganization" type="xs:string">

@@ -8,19 +8,9 @@
 			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="actors" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>A cast member of the movie, tv/radio series, season, episode, or video. (legacy spelling; see singular form, actor)</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="director" type="lt:textList">
 		<xs:annotation>
 			<xs:documentation>The director of the movie, tv/radio episode or series.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="directors" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>The director of the movie, tv/radio episode or series. (legacy spelling; see singular form, director)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="episodeNumber" type="xs:string">

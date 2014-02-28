@@ -161,7 +161,11 @@ class NuxeoType(object):
                           attrib={"namespace": type_url,
                                   "schemaLocation": type_name + ".xsd"})
 
-        for prop_name, prop_type, prop_doc in self.type_data.specific_properties:
+        schema_elements = (prop for prop in self.type_data.specific_properties
+                           if (self.type_data.name,
+                               prop[0]) not in self.tree.skipped)
+
+        for prop_name, prop_type, prop_doc in schema_elements:
             if (self.type_data.name, prop_name) in self.tree.multiples:
                 prop_type = 'lt:textList'
             el = ET.SubElement(schema, _xs("element"),
@@ -193,11 +197,13 @@ class NuxeoTypeTree(object):
     SCHEMA_DIR = "schema"
     ICON_FILE = "icon_mappings.txt"
     MULTIPLES_FILE = "valid_multiples.txt"
+    SKIPPED_FILE = "skip_fields.txt"
 
     def __init__(self, terms, parent_type_name, target_dir):
         self.nuxeo_types = [NuxeoType(term, self) for term in terms]
         self.load_icons()
         self.load_multiples()
+        self.load_skipped()
         self.parent_type_name = parent_type_name
         self.target_dir = target_dir
         self.schema_dir = os.path.join(target_dir, NuxeoTypeTree.SCHEMA_DIR)
@@ -220,6 +226,14 @@ class NuxeoTypeTree(object):
                 key = line.split()
                 result.append(tuple(key))
         self.multiples = set(result)
+
+    def load_skipped(self):
+        result = []
+        with open(NuxeoTypeTree.SKIPPED_FILE) as input_file:
+            for line in input_file:
+                key = line.split()
+                result.append(tuple(key))
+        self.skipped = set(result)
 
     def get_icons(self, type_data):
         if type_data.name in self.icons:
