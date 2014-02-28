@@ -67,3 +67,14 @@ command-line tool.
 
 ![Nuxeo Admin Center screenshot](doc/img/admincenter.png)
 
+After installing, you will see several new document types when you
+create a new document.  Not all of the Schema.org types have been
+given document types in the code checked into the GitHub repository,
+because there are dozens of types classified at Schema.org and
+automatically inserting them all into a Nuxeo system would unduly
+clutter the UI.
+
+![Nuxeo Create Document screenshot](doc/img/doctypes.png)
+
+![Nuxeo Book Form screenshot](doc/img/createform.png)
+
