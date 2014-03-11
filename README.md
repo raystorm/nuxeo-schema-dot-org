@@ -78,3 +78,31 @@ clutter the UI.
 
 ![Nuxeo Book Form screenshot](doc/img/createform.png)
 
+
+You didn't include the Person/Organization/XYZ type!
+----------------------------------------------------
+
+Since Schema.org is a very ambitious ontology that covers a wide area
+of information, we didn't check everything into the GitHub project.
+The core of this project is actually contained in the
+`src/main/scripts/` directory.  The hierarchy of types that are
+generated can be adjusted by calling the code generation script with a
+different root element (use `Thing` for everything).
+
+     $ python generate.py Organization
+     $ python prettycopy.py
+
+This will build a completely different set of types.
+
+You can configure the code generation scripts by editing
+`skip_fields.txt` and `valid_multiples.txt`.  Entries in
+`skip_fields.txt` will not be included in the output, and entries in
+`valid_multiples.txt` will be given an `xs:list` type instead of a
+single entry of whatever type they otherwise would be.
+
+The entries in `icon_mappings.txt` can be used to configure the icons
+associated with UI types for the documents.  However, the GitHub
+project only contains a simple layout for a CreativeWork object, so
+you will either want to edit these files to your own satisfaction, or
+set up your own layouts in your own Nuxeo extensions.
+
