@@ -5,6 +5,7 @@ import os
 import shutil
 import urllib2
 import xml.etree.ElementTree as ET
+import sys
 
 
 ALL_JSON_URL = "http://schema.rdfs.org/all.json"
@@ -372,13 +373,15 @@ class NuxeoTypeTree(object):
             component)
 
 
-def main():
+def main(root_type):
     shutil.rmtree(TARGET_DIR, ignore_errors=True)
     os.makedirs(TARGET_DIR)
     data = json.load(urllib2.urlopen(ALL_JSON_URL))
     schema_terms = SchemaTerms(data)
-    nuxeo_types = NuxeoTypeTree(schema_terms, 'CreativeWork', TARGET_DIR)
+    nuxeo_types = NuxeoTypeTree(schema_terms, root_type, TARGET_DIR)
     nuxeo_types.generate()
 
+
 if __name__ == "__main__":
-    main()
+    root_type = sys.argv[1] if len(sys.argv) > 1 else 'CreativeWork'
+    main(root_type)
