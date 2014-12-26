@@ -5,7 +5,7 @@
 
   <groupId>com.courseload</groupId>
   <artifactId>nuxeo-schema-dot-org</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>Schema.org Vocabularies</name>
   <description>A Nuxeo Marketplace package containing useful vocabularies from
     http://schema.org/CreativeWork.</description>
