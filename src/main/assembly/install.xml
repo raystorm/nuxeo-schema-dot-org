@@ -1,5 +1,5 @@
 <install>
   <copy file="${package.root}/${project.build.finalName}.${project.packaging}"
-      tofile="${env.bundles}"/>
+      tofile="${env.bundles}" overwrite="true"/>
   <deploy file="${env.bundles}/${project.build.finalName}.${project.packaging}"/>
 </install>
