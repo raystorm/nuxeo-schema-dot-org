@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.courseload</groupId>
-  <artifactId>nuxeo-schema-dot-org</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <groupId>com.courseload.nuxeo</groupId>
+  <artifactId>cl-schema-dot-org</artifactId>
+  <version>1.0.3-SNAPSHOT</version>
   <name>Schema.org Vocabularies</name>
   <description>A Nuxeo Marketplace package containing useful vocabularies from
     http://schema.org/CreativeWork.</description>
