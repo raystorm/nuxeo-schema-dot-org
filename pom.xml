@@ -11,7 +11,14 @@
     A Nuxeo Marketplace package containing useful vocabularies from
     http://schema.org/CreativeWork.
   </description>
-
+  
+  <scm>
+    <connection>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</connection>
+    <url>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</url>
+    <developerConnection>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
   <packaging>pom</packaging>
 
   <properties>
