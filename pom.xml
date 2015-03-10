@@ -24,8 +24,8 @@
   </properties>
 
   <modules>
-    <module>nuxeo-schema-dot-org-jar</module>
-    <module>nuxeo-schema-dot-org-package</module>
+    <module>cl-schema-dot-org-jar</module>
+    <module>cl-schema-dot-org-package</module>
   </modules>
   
   <repositories>
