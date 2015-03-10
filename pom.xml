@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.courseload.nuxeo</groupId>
   <artifactId>cl-schema-dot-org</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1-SNAPSHOT</version>
   <name>Schema.org Vocabularies</name>
   <description>
     A Nuxeo Marketplace package containing useful vocabularies from
@@ -14,7 +14,7 @@
     <connection>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</connection>
     <url>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</url>
     <developerConnection>scm:git:git@github.com:courseload/nuxeo-schema-dot-org.git</developerConnection>
-    <tag>cl-schema-dot-org-1.1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   
   <packaging>pom</packaging>
