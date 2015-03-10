@@ -1,4 +1,4 @@
-<package type="addon" name="schema-dot-org" version="${project.version}">
+<package type="addon" name="cl-schema-dot-org" version="${project.version}">
   <title>${project.name}</title>
   <description>${project.description}</description>
   <vendor>Courseload</vendor>
