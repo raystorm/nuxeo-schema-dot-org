@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://schema.org/Clip" 
+           xmlns:lt="http://courseload.com/nuxeo/listTypes" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://courseload.com/nuxeo/listTypes" 
+	           schemaLocation="listTypes.xsd"/>
+	<xs:import namespace="http://schema.org/Thing" 
+	           schemaLocation="Thing.xsd"/>
+	<xs:element name="about" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>Event Subject</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="audience" type="xs:string" >
+	   <xs:annotation>
+		  <xs:documentation>Event Subject</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="doorTime" type="xs:dateTime" >
+	   <xs:annotation>
+			<xs:documentation>Event Subject</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="duration" type="xs:duration" >
+	   <xs:annotation>
+			<xs:documentation>Event Subject</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="endDate" type="xs:dateTime" >
+	   <xs:annotation>
+			<xs:documentation>Event Subject</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="sponsor" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="primaryLanguage" type="xs:language" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="secondaryLanguage" type="xs:language" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="location" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="primaryLanguage" type="xs:language" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="organizer" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="performer" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="startDate" type="xs:dateTime" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+	<xs:element name="translator" type="xs:string" >
+	   <xs:annotation>
+			<xs:documentation>
+			    A person or organization that supports (sponsors) something 
+			    through some kind of contribution.
+			</xs:documentation>
+	   </xs:annotation>
+	</xs:element>
+</xs:schema>

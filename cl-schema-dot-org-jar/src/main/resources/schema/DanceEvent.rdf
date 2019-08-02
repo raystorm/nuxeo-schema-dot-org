@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:schema="http://schema.org/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Property rdf:about="http://schema.org/aggregateRating">
+    <rdfs:comment>The overall rating, based on a collection of reviews or ratings, of the item.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Place"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/AggregateRating"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Offer"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Service"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Brand"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:label>aggregateRating</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Product"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Organization"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/identifier">
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:label>identifier</rdfs:label>
+    <rdfs:comment><![CDATA[The identifier property represents any kind of identifier for any kind of <a class="localLink" href="http://schema.org/Thing">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href="/docs/datamodel.html#identifierBg">background notes</a> for more details.]]></rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/PropertyValue"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/workPerformed">
+    <schema:rangeIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="http://schema.org/workFeatured">
+        <rdfs:comment>A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).</rdfs:comment>
+        <rdfs:label>workFeatured</rdfs:label>
+        <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/CreativeWork"/>
+      </rdf:Property>
+    </rdfs:subPropertyOf>
+    <rdfs:comment>A work performed in some event, for example a play performed in a TheaterEvent.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>workPerformed</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/inLanguage">
+    <schema:domainIncludes rdf:resource="http://schema.org/LinkRole"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/WriteAction"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CommunicateAction"/>
+    <rdfs:comment><![CDATA[The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.]]></rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Language"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:label>inLanguage</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/additionalType">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <rdfs:comment>An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.</rdfs:comment>
+    <rdfs:label>additionalType</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/duration">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:category>issue-1698</schema:category>
+    <schema:domainIncludes rdf:resource="http://schema.org/MusicRelease"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/QuantitativeValueDistribution"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Duration"/>
+    <dcterms:source rdf:resource="https://github.com/schemaorg/schemaorg/issues/1698"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Audiobook"/>
+    <rdfs:comment><![CDATA[The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.]]></rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/MediaObject"/>
+    <rdfs:label>duration</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Movie"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/MusicRecording"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/performers">
+    <rdfs:comment>The main performer or performers of the event&amp;#x2014;for example, a presenter, musician, or actor.</rdfs:comment>
+    <schema:supersededBy>
+      <rdf:Property rdf:about="http://schema.org/performer">
+        <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+        <rdfs:comment>A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.</rdfs:comment>
+        <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+        <rdfs:label>performer</rdfs:label>
+      </rdf:Property>
+    </schema:supersededBy>
+    <rdfs:label>performers</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/director">
+    <schema:domainIncludes rdf:resource="http://schema.org/Clip"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoGameSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Movie"/>
+    <rdfs:label>director</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoGame"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/TVSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/RadioSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeason"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/MovieSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoObject"/>
+    <rdfs:comment>A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Episode"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/actor">
+    <schema:domainIncludes rdf:resource="http://schema.org/Episode"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/TVSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/RadioSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoGame"/>
+    <rdfs:comment>An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoGameSeries"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Movie"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeason"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Clip"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/VideoObject"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/MovieSeries"/>
+    <rdfs:label>actor</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/attendees">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+    <schema:supersededBy>
+      <rdf:Property rdf:about="http://schema.org/attendee">
+        <rdfs:comment>A person or organization attending the event.</rdfs:comment>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+        <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+        <rdfs:label>attendee</rdfs:label>
+      </rdf:Property>
+    </schema:supersededBy>
+    <rdfs:label>attendees</rdfs:label>
+    <rdfs:comment>A person attending the event.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/maximumAttendeeCapacity">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Place"/>
+    <rdfs:comment>The total number of individuals that may attend an event or venue.</rdfs:comment>
+    <rdfs:label>maximumAttendeeCapacity</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/offers">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Service"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/MenuItem"/>
+    <rdfs:comment>An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Offer"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Product"/>
+    <rdfs:label>offers</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Trip"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/AggregateOffer"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/mainEntityOfPage">
+    <rdfs:comment><![CDATA[Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href="/docs/datamodel.html#mainEntityBackground">background notes</a> for details.]]></rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:label>mainEntityOfPage</rdfs:label>
+    <schema:inverseOf rdf:resource="http://schema.org/mainEntity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/doorTime">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Time"/>
+    <rdfs:comment>The time admission will commence.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/DateTime"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>doorTime</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/startDate">
+    <schema:domainIncludes rdf:resource="http://schema.org/DatedMoneySpecification"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/DateTime"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeries"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Date"/>
+    <rdfs:label>startDate</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeason"/>
+    <rdfs:comment><![CDATA[The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).]]></rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Role"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/remainingAttendeeCapacity">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>remainingAttendeeCapacity</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Integer"/>
+    <rdfs:comment>The number of attendee places for an event that remain unallocated.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/image">
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/ImageObject"/>
+    <rdfs:comment><![CDATA[An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a> or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.]]></rdfs:comment>
+    <rdfs:label>image</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/url">
+    <rdfs:label>url</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:comment>URL of the item.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/sameAs">
+    <rdfs:comment>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:label>sameAs</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/endDate">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Date"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/DateTime"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeries"/>
+    <rdfs:label>endDate</rdfs:label>
+    <rdfs:comment><![CDATA[The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).]]></rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/DatedMoneySpecification"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Role"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWorkSeason"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/typicalAgeRange">
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:comment>The typical expected age range, e.g. '7-9', '11-'.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <rdfs:label>typicalAgeRange</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/recordedIn">
+    <schema:rangeIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <schema:inverseOf rdf:resource="http://schema.org/recordedAt"/>
+    <rdfs:comment>The CreativeWork that captured all or part of this Event.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>recordedIn</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/potentialAction">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Action"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:label>potentialAction</rdfs:label>
+    <rdfs:comment>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/location">
+    <rdfs:label>location</rdfs:label>
+    <rdfs:comment>The location of for example where the event is happening, an organization is located, or where an action takes place.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/PostalAddress"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Organization"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Place"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Action"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="http://schema.org/DanceEvent">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>DanceEvent</rdfs:label>
+    <rdfs:comment>Event type: A social dance.</rdfs:comment>
+  </rdfs:Class>
+  <rdf:Property rdf:about="http://schema.org/funder">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:comment>A person or organization that supports (sponsors) something through some kind of financial contribution.</rdfs:comment>
+    <rdfs:label>funder</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Organization"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Person"/>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="http://schema.org/sponsor">
+        <schema:domainIncludes rdf:resource="http://schema.org/MedicalStudy"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+        <schema:domainIncludes rdf:resource="http://schema.org/Grant"/>
+        <schema:domainIncludes rdf:resource="http://schema.org/Person"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label>sponsor</rdfs:label>
+        <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+        <rdfs:comment>A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.</rdfs:comment>
+        <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+        <schema:domainIncludes rdf:resource="http://schema.org/Organization"/>
+      </rdf:Property>
+    </rdfs:subPropertyOf>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/MonetaryGrant"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/disambiguatingDescription">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <rdfs:label>disambiguatingDescription</rdfs:label>
+    <rdfs:comment>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="http://schema.org/description">
+        <rdfs:comment>A description of the item.</rdfs:comment>
+        <rdfs:label>description</rdfs:label>
+        <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+        <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/description"/>
+      </rdf:Property>
+    </rdfs:subPropertyOf>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/review">
+    <rdfs:label>review</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Place"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Review"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Offer"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:comment>A review of the item.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Service"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Brand"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Organization"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Product"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/eventStatus">
+    <rdfs:label>eventStatus</rdfs:label>
+    <rdfs:comment>An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/EventStatusType"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/previousStartDate">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Date"/>
+    <rdfs:label>previousStartDate</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:comment>Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/organizer">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>organizer</rdfs:label>
+    <rdfs:comment>An organizer of an Event.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/audience">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Audience"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/LodgingBusiness"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:comment>An intended audience, i.e. a group for whom something was created.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/PlayAction"/>
+    <rdfs:label>audience</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Service"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Product"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/composer">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <rdfs:comment>The person or organization who wrote a composition, or who is the composer of a work performed at some event.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/MusicComposition"/>
+    <rdfs:label>composer</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+    <dcterms:source rdf:resource="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/name">
+    <rdfs:label>name</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <rdfs:comment>The name of the item.</rdfs:comment>
+    <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/title"/>
+    <rdfs:subPropertyOf rdf:resource="rdfs:label"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/translator">
+    <rdfs:comment>Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <rdfs:label>translator</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/contributor">
+    <rdfs:label>contributor</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Organization"/>
+    <rdfs:comment>A secondary contributor to the CreativeWork or Event.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Person"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/alternateName">
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <rdfs:comment>An alias for the item.</rdfs:comment>
+    <rdfs:label>alternateName</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/subEvents">
+    <rdfs:comment>Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.</rdfs:comment>
+    <rdfs:label>subEvents</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:supersededBy>
+      <rdf:Property rdf:about="http://schema.org/subEvent">
+        <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+        <rdfs:label>subEvent</rdfs:label>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Event"/>
+        <schema:inverseOf rdf:resource="http://schema.org/superEvent"/>
+        <rdfs:comment>An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.</rdfs:comment>
+      </rdf:Property>
+    </schema:supersededBy>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/isAccessibleForFree">
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Place"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Boolean"/>
+    <rdfs:comment>A flag to signal that the item, event, or place is accessible for free.</rdfs:comment>
+    <rdfs:label>isAccessibleForFree</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/PublicationEvent"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/about">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:comment>The subject matter of the content.</rdfs:comment>
+    <schema:category>issue-1670</schema:category>
+    <schema:domainIncludes rdf:resource="http://schema.org/CommunicateAction"/>
+    <dcterms:source rdf:resource="https://github.com/schemaorg/schemaorg/issues/1670"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:inverseOf>
+      <rdf:Property rdf:about="http://schema.org/subjectOf">
+        <rdfs:label>subjectOf</rdfs:label>
+        <schema:category>issue-1670</schema:category>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Event"/>
+        <rdfs:comment>A CreativeWork or Event about this Thing.</rdfs:comment>
+        <schema:rangeIncludes rdf:resource="http://schema.org/CreativeWork"/>
+        <schema:inverseOf rdf:resource="http://schema.org/about"/>
+        <dcterms:source rdf:resource="https://github.com/schemaorg/schemaorg/issues/1670"/>
+        <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+      </rdf:Property>
+    </schema:inverseOf>
+    <schema:domainIncludes rdf:resource="http://schema.org/CreativeWork"/>
+    <rdfs:label>about</rdfs:label>
+  </rdf:Property>
+  <rdfs:Class rdf:about="http://schema.org/Event">
+    <rdfs:label>Event</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://purl.org/dc/dcmitype/Event"/>
+    <rdfs:comment><![CDATA[An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class="localLink" href="http://schema.org/offers">offers</a> property. Repeated events may be structured as separate Event objects.]]></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="http://schema.org/superEvent">
+    <schema:inverseOf rdf:resource="http://schema.org/subEvent"/>
+    <rdfs:comment>An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.</rdfs:comment>
+    <rdfs:label>superEvent</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Event"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Event"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="http://schema.org/Thing">
+    <rdfs:comment>The most generic type of item.</rdfs:comment>
+    <rdfs:label>Thing</rdfs:label>
+  </rdfs:Class>
+</rdf:RDF>

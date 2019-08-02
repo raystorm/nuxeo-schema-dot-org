@@ -3,11 +3,14 @@
 	<extension point="schema" target="org.nuxeo.ecm.core.schema.TypeService">
 		<schema name="listTypes" src="schema/listTypes.xsd"/>
 		<schema name="Thing" prefix="thing" src="schema/Thing.xsd"/>
+		<!--
 		<schema name="CreativeWork" prefix="creativework" src="schema/CreativeWork.xsd"/>
 		<schema name="Movie" prefix="movie" src="schema/Movie.xsd"/>
 		<schema name="MediaObject" prefix="mediaobject" src="schema/MediaObject.xsd"/>
 		<schema name="Blog" prefix="blog" src="schema/Blog.xsd"/>
+		-->
 		<schema name="Book" prefix="book" src="schema/Book.xsd"/>
+		<!-- 
 		<schema name="MusicRecording" prefix="musicrecording" src="schema/MusicRecording.xsd"/>
 		<schema name="ExercisePlan" prefix="exerciseplan" src="schema/ExercisePlan.xsd"/>
 		<schema name="Map" prefix="map" src="schema/Map.xsd"/>
@@ -21,7 +24,9 @@
 		<schema name="Episode" prefix="episode" src="schema/Episode.xsd"/>
 		<schema name="WebPage" prefix="webpage" src="schema/WebPage.xsd"/>
 		<schema name="MusicPlaylist" prefix="musicplaylist" src="schema/MusicPlaylist.xsd"/>
+		-->
 		<schema name="ItemList" prefix="itemlist" src="schema/ItemList.xsd"/>
+		<!--
 		<schema name="Painting" prefix="painting" src="schema/Painting.xsd"/>
 		<schema name="Comment" prefix="comment" src="schema/Comment.xsd"/>
 		<schema name="Code" prefix="code" src="schema/Code.xsd"/>
@@ -33,8 +38,10 @@
 		<schema name="TVSeries" prefix="tvseries" src="schema/TVSeries.xsd"/>
 		<schema name="DataCatalog" prefix="datacatalog" src="schema/DataCatalog.xsd"/>
 		<schema name="Sculpture" prefix="sculpture" src="schema/Sculpture.xsd"/>
+		-->
 		<schema name="AudioObject" prefix="audioobject" src="schema/AudioObject.xsd"/>
 		<schema name="VideoObject" prefix="videoobject" src="schema/VideoObject.xsd"/>
+		<!-- 
 		<schema name="SearchResultsPage" prefix="searchresultspage" src="schema/SearchResultsPage.xsd"/>
 		<schema name="RadioClip" prefix="radioclip" src="schema/RadioClip.xsd"/>
 		<schema name="MusicVideoObject" prefix="musicvideoobject" src="schema/MusicVideoObject.xsd"/>
@@ -42,13 +49,19 @@
 		<schema name="TVClip" prefix="tvclip" src="schema/TVClip.xsd"/>
 		<schema name="DataDownload" prefix="datadownload" src="schema/DataDownload.xsd"/>
 		<schema name="RadioSeries" prefix="radioseries" src="schema/RadioSeries.xsd"/>
+		-->
 		<schema name="AboutPage" prefix="aboutpage" src="schema/AboutPage.xsd"/>
+		<!-- 
 		<schema name="WPFooter" prefix="wpfooter" src="schema/WPFooter.xsd"/>
+		-->
 		<schema name="ImageObject" prefix="imageobject" src="schema/ImageObject.xsd"/>
+		<!-- 
 		<schema name="CheckoutPage" prefix="checkoutpage" src="schema/CheckoutPage.xsd"/>
 		<schema name="ScholarlyArticle" prefix="scholarlyarticle" src="schema/ScholarlyArticle.xsd"/>
 		<schema name="NewsArticle" prefix="newsarticle" src="schema/NewsArticle.xsd"/>
+		-->
 		<schema name="ProfilePage" prefix="profilepage" src="schema/ProfilePage.xsd"/>
+		<!-- 
 		<schema name="SiteNavigationElement" prefix="sitenavigationelement" src="schema/SiteNavigationElement.xsd"/>
 		<schema name="WPSideBar" prefix="wpsidebar" src="schema/WPSideBar.xsd"/>
 		<schema name="ItemPage" prefix="itempage" src="schema/ItemPage.xsd"/>
@@ -69,5 +82,8 @@
 		<schema name="VideoGallery" prefix="videogallery" src="schema/VideoGallery.xsd"/>
 		<schema name="ImageGallery" prefix="imagegallery" src="schema/ImageGallery.xsd"/>
 		<schema name="MedicalScholarlyArticle" prefix="medicalscholarlyarticle" src="schema/MedicalScholarlyArticle.xsd"/>
+	    -->
+	    <schema name="Event" prefix="event" src="schema/Event.xsd"/>
+	    <schema name="DanceEvent" prefix="danceevent" src="schema/DanceEvent.xsd"/>
 	</extension>
 </component>

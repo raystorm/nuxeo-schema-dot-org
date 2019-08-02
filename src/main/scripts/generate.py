@@ -4,11 +4,17 @@ import json
 import os
 import shutil
 import urllib2
+#fix the urllib2 imports for python3
+#import urllib.request
+#import urllib.error
 import xml.etree.ElementTree as ET
 import sys
 
 
-ALL_JSON_URL = "http://schema.rdfs.org/all.json"
+#ALL_JSON_URL = "http://schema.rdfs.org/all.json"
+#ALL_JSON_URL = "https://schema.org/docs/tree.jsonld"
+#ALL_JSON_URL = "https://schema.org/all.jsonld"
+ALL_JSON_URL = "https://schema.org/version/latest/all-layers.jsonld"
 TARGET_DIR = "../../../tmp"
 XS_URL = "http://www.w3.org/2001/XMLSchema"
 
@@ -377,6 +383,7 @@ def main(root_type):
     shutil.rmtree(TARGET_DIR, ignore_errors=True)
     os.makedirs(TARGET_DIR)
     data = json.load(urllib2.urlopen(ALL_JSON_URL))
+    #data = json.load(urllib.urlopen(ALL_JSON_URL))
     schema_terms = SchemaTerms(data)
     nuxeo_types = NuxeoTypeTree(schema_terms, root_type, TARGET_DIR)
     nuxeo_types.generate()

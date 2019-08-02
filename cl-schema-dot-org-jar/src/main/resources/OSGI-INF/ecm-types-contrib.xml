@@ -7,6 +7,7 @@
 			<schema name="dublincore"/>
 			<schema name="Thing"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="CreativeWork">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -20,6 +21,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Movie"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="MediaObject">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -27,6 +29,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="MediaObject"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="Blog">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -34,6 +37,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Blog"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="Book">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -41,6 +45,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Book"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="MusicRecording">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -104,6 +109,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Review"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="Photograph">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -111,6 +117,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Photograph"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="Episode">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -132,6 +139,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="MusicPlaylist"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="ItemList">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -139,6 +147,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="ItemList"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="Painting">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -216,6 +225,7 @@
 			<schema name="CreativeWork"/>
 			<schema name="Sculpture"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="AudioObject">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -232,6 +242,7 @@
 			<schema name="MediaObject"/>
 			<schema name="VideoObject"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="SearchResultsPage">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -288,6 +299,7 @@
 			<schema name="Series"/>
 			<schema name="RadioSeries"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="AboutPage">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -296,6 +308,7 @@
 			<schema name="WebPage"/>
 			<schema name="AboutPage"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="WPFooter">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -304,6 +317,7 @@
 			<schema name="WebPageElement"/>
 			<schema name="WPFooter"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="ImageObject">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -312,6 +326,7 @@
 			<schema name="MediaObject"/>
 			<schema name="ImageObject"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="CheckoutPage">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -336,6 +351,7 @@
 			<schema name="Article"/>
 			<schema name="NewsArticle"/>
 		</doctype>
+		-->
 		<doctype extends="File" name="ProfilePage">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -344,6 +360,7 @@
 			<schema name="WebPage"/>
 			<schema name="ProfilePage"/>
 		</doctype>
+		<!-- 
 		<doctype extends="File" name="SiteNavigationElement">
 			<schema name="common"/>
 			<schema name="dublincore"/>
@@ -508,5 +525,6 @@
 			<schema name="ScholarlyArticle"/>
 			<schema name="MedicalScholarlyArticle"/>
 		</doctype>
+		-->
 	</extension>
 </component>
